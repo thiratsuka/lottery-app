@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fundi抽選アプリ</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>🎯 fundi抽選アプリ</h1>
+    </header>
+    <main>
+        <!-- 抽選フォーム -->
+        <section id="抽選">
+            <h2>抽選設定</h2>
+            <form id="lottery-form">
+                <label for="csv-file">CSVファイルをアップロード:</label>
+                <input type="file" id="csv-file" accept=".csv" required>
+                <br><br>
+                <label for="budget">抽選予算金額:</label>
+                <input type="number" id="budget" name="budget" min="1" required>
+                <br><br>
+                <label for="exclude">除外するメールアドレス (カンマ区切り):</label>
+                <input type="text" id="exclude" name="exclude" placeholder="例: sample1@example.com, sample2@example.com">
+                <br><br>
+                <button type="button" onclick="submitForm()">抽選開始</button>
+            </form>
+            <div id="result">
+                <!-- 抽選結果がここに表示されます -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 fundi All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function submitForm() {
+            const fileInput = document.getElementById("csv-file");
+            const budget = parseInt(document.getElementById("budget").value, 10);
+            const excludeInput = document.getElementById("exclude").value;
+
+            if (!fileInput.files[0]) {
+                alert("CSVファイルをアップロードしてください。");
+                return;
+            }
+
+            const excludeList = excludeInput.split(",").map(email => email.trim());
+
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const csvData = event.target.result;
+                const rows = csvData.split("\n").map(row => row.split(","));
+                const [header, ...data] = rows;
+
+                if (!header.includes("メールアドレス") || !header.includes("金額")) {
+                    document.getElementById("result").innerHTML = "<p>CSVに 'メールアドレス' と '金額' 列が必要です。</p>";
+                    return;
+                }
+
+                const emailIndex = header.indexOf("メールアドレス");
+                const amountIndex = header.indexOf("金額");
+
+                const validData = data.filter(row => !excludeList.includes(row[emailIndex]));
+
+                let remainingBudget = budget;
+                const selected = [];
+
+                validData.forEach(row => {
+                    const email = row[emailIndex];
+                    const amount = parseInt(row[amountIndex], 10);
+                    if (amount <= remainingBudget) {
+                        selected.push({ email, amount });
+                        remainingBudget -= amount;
+                    }
+                });
+
+                // 結果を表示
+                let resultHtml = `<p>抽選結果: ${selected.length}名が当選しました！</p><ul>`;
+                selected.forEach(item => {
+                    resultHtml += `<li>${item.email} - ${item.amount}円</li>`;
+                });
+                resultHtml += `</ul><p>残り予算: ${remainingBudget}円</p>`;
+                document.getElementById("result").innerHTML = resultHtml;
+            };
+
+            reader.readAsText(fileInput.files[0]);
+        }
+    </script>
+</body>
+</html>
