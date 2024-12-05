@@ -38,8 +38,6 @@
     </footer>
 
     <script>
-        console.log("2024/12/05 v1");
-
         function submitForm() {
             const fileInput = document.getElementById("csv-file");
             const budget = parseInt(document.getElementById("budget").value, 10);
@@ -64,9 +62,6 @@
                         .map(row => row.split(",").map(cell => cell.trim()));
 
                     const header = rows[0];
-
-                    // デバッグ情報を表示
-                    console.log("ヘッダー行:", header);
 
                     const emailIndex = header.findIndex(col =>
                         col.includes("メール") || col.toLowerCase().includes("mail"));
@@ -114,27 +109,56 @@
 
                     let remainingBudget = budget;
                     const selected = [];
+                    let partialWin = null;
 
-                    shuffled.forEach(item => {
+                    // 完全当選者の選定
+                    for (let i = 0; i < shuffled.length - 1; i++) {
+                        const item = shuffled[i];
                         if (item.amount <= remainingBudget) {
                             selected.push(item);
                             remainingBudget -= item.amount;
                         }
-                    });
+                    }
+
+                    // 最後の1人の部分当選処理
+                    const lastPerson = shuffled[shuffled.length - 1];
+                    if (remainingBudget > 0 && lastPerson) {
+                        const partialAmount = Math.min(lastPerson.amount, remainingBudget);
+                        partialWin = {
+                            email: lastPerson.email,
+                            requestedAmount: lastPerson.amount,
+                            awardedAmount: partialAmount
+                        };
+                        remainingBudget -= partialAmount;
+                    }
 
                     // 結果を表示
                     let resultHtml = `
                         <h3>抽選結果</h3>
-                        <p>当選者数: ${selected.length}名</p>
-                        <p>使用予算: ${budget - remainingBudget}円 / ${budget}円</p>
-                        <p>残予算: ${remainingBudget}円</p>
-                        <h4>当選者一覧:</h4>
+                        <p>完全当選者数: ${selected.length}名</p>
+                        <h4>完全当選者一覧:</h4>
                         <ul>
                     `;
                     selected.forEach(item => {
                         resultHtml += `<li>${item.email} - ${item.amount.toLocaleString()}円</li>`;
                     });
                     resultHtml += "</ul>";
+
+                    if (partialWin) {
+                        resultHtml += `
+                            <h4>部分当選者:</h4>
+                            <p>${partialWin.email} - ${partialWin.awardedAmount.toLocaleString()}円 
+                            (申請額: ${partialWin.requestedAmount.toLocaleString()}円)</p>
+                        `;
+                    }
+
+                    resultHtml += `
+                        <h4>予算状況:</h4>
+                        <p>総予算: ${budget.toLocaleString()}円</p>
+                        <p>使用金額: ${(budget - remainingBudget).toLocaleString()}円</p>
+                        <p>残額: ${remainingBudget.toLocaleString()}円</p>
+                    `;
+
                     resultDiv.innerHTML = resultHtml;
 
                 } catch (error) {
