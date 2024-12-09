@@ -1,4 +1,4 @@
-console.log("2024/12/09 v4 - Debug version");
+console.log("2024/12/09 v5 - Debug version");
 
 // 抽選結果を保存するための変数
 let currentResults = null;
@@ -307,6 +307,13 @@ function submitForm() {
     };
 
     reader.readAsText(fileInput.files[0]);
+}
+
+function clearHistory() {
+    if (confirm('履歴を全て削除してもよろしいですか？')) {
+        localStorage.removeItem(HISTORY_KEY);
+        displayHistory();
+    }
 }
 
 // 初期表示時に履歴を表示
