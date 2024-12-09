@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fundi抽選アプリ</title>
-    <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
@@ -31,155 +30,21 @@
             <div id="result">
                 <!-- 抽選結果がここに表示されます -->
             </div>
+            <div id="download-area" style="display: none; margin-top: 20px;">
+                <button onclick="downloadResults()">結果をCSVでダウンロード</button>
+            </div>
+        </section>
+        <section id="履歴" style="margin-top: 40px;">
+            <h2>抽選履歴</h2>
+            <div id="history-list">
+                <!-- 履歴がここに表示されます -->
+            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 fundi All Rights Reserved.</p>
     </footer>
-
-    <script>
-        console.log("2024/12/05 v2");
-
-        function submitForm() {
-            const fileInput = document.getElementById("csv-file");
-            const budget = parseInt(document.getElementById("budget").value, 10);
-            const excludeInput = document.getElementById("exclude").value;
-            const resultDiv = document.getElementById("result");
-
-            if (!fileInput.files[0]) {
-                alert("CSVファイルをアップロードしてください。");
-                return;
-            }
-
-            const excludeList = excludeInput.split(",").map(email => email.trim()).filter(email => email);
-
-            const reader = new FileReader();
-            reader.onload = function (event) {
-                try {
-                    const csvData = event.target.result;
-                    // 空行を除去し、各行をトリム
-                    const rows = csvData.split("\n")
-                        .map(row => row.trim())
-                        .filter(row => row.length > 0)
-                        .map(row => row.split(",").map(cell => cell.trim()));
-
-                    const header = rows[0];
-
-                    const emailIndex = header.findIndex(col =>
-                        col.includes("メール") || col.toLowerCase().includes("mail"));
-                    const amountIndex = header.findIndex(col =>
-                        col.includes("金額") || col.includes("額") || col.toLowerCase().includes("amount"));
-
-                    if (emailIndex === -1 || amountIndex === -1) {
-                        resultDiv.innerHTML = `
-                            <p class="error">CSVファイルの形式が正しくありません。</p>
-                            <p>以下の列が必要です：</p>
-                            <ul>
-                                <li>メールアドレス (または "mail"を含む列名)</li>
-                                <li>金額 (または "amount"を含む列名)</li>
-                            </ul>
-                            <p>現在のヘッダー: ${header.join(", ")}</p>
-                        `;
-                        return;
-                    }
-
-                    const data = rows.slice(1).filter(row => row.length >= Math.max(emailIndex, amountIndex) + 1);
-
-                    if (data.length === 0) {
-                        resultDiv.innerHTML = "<p class='error'>有効なデータが見つかりませんでした。</p>";
-                        return;
-                    }
-
-                    const validData = data
-                        .filter(row => {
-                            const email = row[emailIndex];
-                            const amount = parseInt(row[amountIndex], 10);
-                            return (
-                                email &&
-                                !excludeList.includes(email) &&
-                                !isNaN(amount) &&
-                                amount > 0
-                            );
-                        })
-                        .map(row => ({
-                            email: row[emailIndex],
-                            amount: parseInt(row[amountIndex], 10)
-                        }));
-
-                    // ランダムに並び替え
-                    const shuffled = validData.sort(() => Math.random() - 0.5);
-
-                    let remainingBudget = budget;
-                    const selected = [];
-                    let partialWin = null;
-
-                    // 完全当選者の選定
-                    for (let i = 0; i < shuffled.length - 1; i++) {
-                        const item = shuffled[i];
-                        if (item.amount <= remainingBudget) {
-                            selected.push(item);
-                            remainingBudget -= item.amount;
-                        }
-                    }
-
-                    // 最後の1人の部分当選処理
-                    const lastPerson = shuffled[shuffled.length - 1];
-                    if (remainingBudget > 0 && lastPerson) {
-                        const partialAmount = Math.min(lastPerson.amount, remainingBudget);
-                        partialWin = {
-                            email: lastPerson.email,
-                            requestedAmount: lastPerson.amount,
-                            awardedAmount: partialAmount
-                        };
-                        remainingBudget -= partialAmount;
-                    }
-
-                    // 結果を表示
-                    let resultHtml = `
-                        <h3>抽選結果</h3>
-                        <p>完全当選者数: ${selected.length}名</p>
-                        <h4>完全当選者一覧:</h4>
-                        <ul>
-                    `;
-                    selected.forEach(item => {
-                        resultHtml += `<li>${item.email} - ${item.amount.toLocaleString()}円</li>`;
-                    });
-                    resultHtml += "</ul>";
-
-                    if (partialWin) {
-                        resultHtml += `
-                            <h4>部分当選者:</h4>
-                            <p>${partialWin.email} - ${partialWin.awardedAmount.toLocaleString()}円 
-                            (申請額: ${partialWin.requestedAmount.toLocaleString()}円)</p>
-                        `;
-                    }
-
-                    resultHtml += `
-                        <h4>予算状況:</h4>
-                        <p>総予算: ${budget.toLocaleString()}円</p>
-                        <p>使用金額: ${(budget - remainingBudget).toLocaleString()}円</p>
-                        <p>残額: ${remainingBudget.toLocaleString()}円</p>
-                    `;
-
-                    resultDiv.innerHTML = resultHtml;
-
-                } catch (error) {
-                    console.error("エラーが発生しました:", error);
-                    resultDiv.innerHTML = `
-                        <p class="error">ファイルの処理中にエラーが発生しました。</p>
-                        <p>エラー内容: ${error.message}</p>
-                    `;
-                }
-            };
-
-            reader.onerror = function (error) {
-                console.error("ファイル読み込みエラー:", error);
-                resultDiv.innerHTML = "<p class='error'>ファイルの読み込み中にエラーが発生しました。</p>";
-            };
-
-            reader.readAsText(fileInput.files[0]);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
