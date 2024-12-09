@@ -1,4 +1,4 @@
-console.log("2024/12/09 v5 - Debug version");
+console.log("2024/12/09 v6 - Debug version");
 
 // 抽選結果を保存するための変数
 let currentResults = null;
@@ -257,26 +257,46 @@ function submitForm() {
                 remainingAmount: remainingBudget
             };
 
-            // 結果を表示
+            // 結果を表示する部分を修正
             let resultHtml = `
                 <h3>抽選結果</h3>
-                <p>完全当選者数: ${selected.length}名</p>
-                <h4>完全当選者一覧:</h4>
-                <ul>
+                <h4>当選状況:</h4>
+                <table style="border-collapse: collapse; margin: 10px 0;">
+                    <tr>
+                        <th style="border: 1px solid #ccc; padding: 5px;">メールアドレス</th>
+                        <th style="border: 1px solid #ccc; padding: 5px;">申請額</th>
+                        <th style="border: 1px solid #ccc; padding: 5px;">当選額</th>
+                        <th style="border: 1px solid #ccc; padding: 5px;">当選タイプ</th>
+                    </tr>
             `;
-            selected.forEach(item => {
-                resultHtml += `<li>${item.email} - ${safeToLocaleString(item.amount)}円</li>`;
-            });
-            resultHtml += "</ul>";
 
+            // 完全当選者
+            selected.forEach(item => {
+                resultHtml += `
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 5px;">${item.email}</td>
+                        <td style="border: 1px solid #ccc; padding: 5px;">${safeToLocaleString(item.amount)}円</td>
+                        <td style="border: 1px solid #ccc; padding: 5px;">${safeToLocaleString(item.amount)}円</td>
+                        <td style="border: 1px solid #ccc; padding: 5px;">完全当選</td>
+                    </tr>
+                `;
+            });
+
+            // 部分当選者
             if (partialWin) {
                 resultHtml += `
-                    <h4>部分当選者:</h4>
-                    <p>${partialWin.email} - ${safeToLocaleString(partialWin.awardedAmount)}円 
-                    (申請額: ${safeToLocaleString(partialWin.requestedAmount)}円)</p>
+                    <tr>
+                        <td style="border: 1px solid #ccc; padding: 5px;">${partialWin.email}</td>
+                        <td style="border: 1px solid #ccc; padding: 5px;">${safeToLocaleString(partialWin.requestedAmount)}円</td>
+                        <td style="border: 1px solid #ccc; padding: 5px;">${safeToLocaleString(partialWin.awardedAmount)}円</td>
+                        <td style="border: 1px solid #ccc; padding: 5px;">部分当選</td>
+                    </tr>
                 `;
             }
 
+            resultHtml += `</table>`;
+
+            // 予算状況の表示
             resultHtml += `
                 <h4>予算状況:</h4>
                 <p>総予算: ${safeToLocaleString(budget)}円</p>
