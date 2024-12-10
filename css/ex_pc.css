@@ -1,0 +1,771 @@
+@media screen and (min-width: 769px) {
+  .fundList ul li .right .dlist2 dl dd {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  .fundList ul li .right .dlist2 dl dd::before {
+    position: absolute;
+    content: "";
+    left: -2px;
+    bottom: -0px;
+    width: 120%;
+    height: 20px;
+    background: -webkit-gradient(linear, left top, right top, from(#ffe200), to(white));
+    background: -webkit-linear-gradient(left, #ffe200 0%, white 100%);
+    background: -moz- oldlinear-gradient(left, #ffe200 0%, white 100%);
+    background: linear-gradient(90deg, #ffe200 0%, white 100%);
+    -moz-border-radius: 2px 0 0 15px;
+         border-radius: 2px 0 0 15px;
+    -webkit-transform: rotate(-2deg);
+       -moz-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+    z-index: -1;
+  }
+  .fundList ul li .right .dlist2 dl dd.st2::before {
+    display: none;
+  }
+  .pChild__main .fundList.st2 ul li .right .dlist2 dl dd::before {
+    display: none;
+  }
+  .fundList ul li .right .dlist2 dl dd span {
+    background: none;
+    position: relative;
+  }
+  .fundList ul li .left {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+    border-width: 6px;
+    border-style: solid;
+    -moz-border-radius: 8px;
+         border-radius: 8px;
+  }
+  .fundList ul li .left .meta {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    width: 123px;
+    height: 35px;
+    -moz-border-radius: 4px;
+         border-radius: 4px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .fundList ul li .left .meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .fundList ul li .left .meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .fundList ul li .left .meta.st3 {
+    color: #FFEB00;
+    background: #2952C1;
+  }
+  .fundList ul li .left .meta.st4 {
+    color: #fff;
+    background: #14B3E0;
+  }
+  .fundList ul li .left .meta.st5 {
+    color: #fff;
+    background: #939393;
+  }
+  .fundList ul li .left .meta.st6 {
+    color: #fff;
+    background: #434343;
+  }
+  .fundList ul li .left .meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  }
+  .fundList ul li .left .caption {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    line-height: 0;
+    text-align: center;
+    padding: 7px 0;
+  }
+  .fundList ul li .left .caption img {
+    height: 17px;
+    width: auto;
+  }
+  .fundList ul li .left .caption.caption01 {
+    background: rgba(66, 206, 184, 0.9);
+  }
+  .fundList ul li .left .caption.caption02 {
+    background: rgba(152, 210, 84, 0.9);
+  }
+  .fundList ul li .left .caption.caption03 {
+    background: rgba(96, 135, 238, 0.9);
+  }
+  .fundList ul li .left.st1 {
+    border-color: #EF2E63;
+  }
+  .fundList ul li .left.st2 {
+    border-color: #F2911F;
+  }
+  .fundList ul li .left.st3 {
+    border-color: #2952C1;
+  }
+  .fundList ul li .left.st4 {
+    border-color: #14B3E0;
+  }
+  .fundList ul li .left.st5 {
+    border-color: #939393;
+  }
+  .fundList ul li .left.st6 {
+    border-color: #434343;
+  }
+  .fundList ul li .left.st7 {
+    border-color: #56B25D;
+  }
+  .fundList ul li .right .blk_meta .meta {
+    -moz-border-radius: 18px;
+         border-radius: 18px;
+  }
+  .fundList ul li .right .blk_meta .meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .fundList ul li .right .blk_meta .meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .fundList ul li .right .blk_meta .meta.st3 {
+    color: #fff;
+    background: #2952C1;
+  }
+  .fundList ul li .right .blk_meta .meta.st4 {
+    color: #fff;
+    background: #14B3E0;
+  }
+  .fundList ul li .right .blk_meta .meta.st5 {
+    color: #fff;
+    background: #939393;
+  }
+  .fundList ul li .right .blk_meta .meta.st6 {
+    color: #fff;
+    background: #434343;
+  }
+  .fundList ul li .right .blk_meta .meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  }
+  .fundList ul li .right .blk_meta .type {
+    min-width: 100px;
+    -moz-border-radius: 18px;
+         border-radius: 18px;
+    font-weight: 700;
+  }
+  .fundList ul li .right .blk_meta .type.type01 {
+    background: rgba(230, 86, 125, 0.2);
+    color: #E6567D;
+  }
+  .fundList ul li .right .blk_meta .type.type02 {
+    background: rgba(66, 150, 222, 0.2);
+    color: #4296DE;
+  }
+  .pChild__main .fundList.st2 ul li .left {
+    border: none;
+  }
+  .fundList.st2 ul li .right .blk_meta .meta {
+    margin-bottom: 10px;
+  }
+  .fundList.st2 ul li .right .blk_meta .type {
+    min-width: 59px;
+    margin-bottom: 10px;
+  }
+  .fundList.st2 ul li .right .blk_meta .tag {
+    margin-left: 8px;
+    background: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+  }
+  .fundList.st2 ul li .right .blk_meta .tag.tag1 {
+    border: 1px solid #42CEB8;
+    color: #42CEB8;
+  }
+  .fundList.st2 ul li .right .blk_meta .tag.tag2 {
+    border: 1px solid #98D254;
+    color: #98D254;
+  }
+  .fundList.st2 ul li .right .blk_meta .tag.tag3 {
+    border: 1px solid #6087EE;
+    color: #6087EE;
+  }
+  .pChild__main .fundList.st2 ul li .right .blk_meta .meta_tt {
+    margin-top: 0;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st3 {
+    color: #fff;
+    background: #2952C1;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st4 {
+    color: #fff;
+    background: #14B3E0;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st5 {
+    color: #fff;
+    background: #939393;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st6 {
+    color: #fff;
+    background: #434343;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st7 {
+    color: #fff;
+    background: #56B25D;
+  }
+  .p_fund_detail .dlist2 dl dd {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+    padding: 0 8.8px;
+  }
+  .p_fund_detail .dlist2 dl dd span {
+    background: none;
+  }
+  .p_fund_detail .dlist2 dl dd::before {
+    position: absolute;
+    content: "";
+    left: -2px;
+    bottom: -0px;
+    width: 120%;
+    height: 20px;
+    background: -webkit-gradient(linear, left top, right top, from(#ffe200), to(white));
+    background: -webkit-linear-gradient(left, #ffe200 0%, white 100%);
+    background: -moz- oldlinear-gradient(left, #ffe200 0%, white 100%);
+    background: linear-gradient(90deg, #ffe200 0%, white 100%);
+    -moz-border-radius: 2px 0 0 15px;
+         border-radius: 2px 0 0 15px;
+    -webkit-transform: rotate(-2deg);
+       -moz-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+    z-index: -1;
+  }
+  .p_fund_detail .dlist2 dl:nth-of-type(3) dd::before {
+    display: none;
+  }
+  .p_fund_detail .dlist03 dl dd span {
+    background: none;
+  }
+  .p_fund_detail .dlist2 > p span.type.type01 {
+    background: rgba(230, 86, 125, 0.2);
+    color: #E6567D;
+  }
+  .p_fund_detail .dlist2 > p span.type.type02 {
+    background: rgba(66, 150, 222, 0.2);
+    color: #4296DE;
+  }
+  .pChild .fundDetail__fea .intro span.tag {
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .pChild .fundDetail__fea .intro span.tag.tag1 {
+    background: #42CEB8;
+  }
+  .pChild .fundDetail__fea .intro span.tag.tag2 {
+    background: #98D254;
+  }
+  .pChild .fundDetail__fea .intro span.tag.tag3 {
+    background: #6087EE;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    color: #fff;
+    min-width: 123px;
+    font-size: 18px;
+    line-height: 27px;
+    padding: 4px 10px;
+    -moz-border-radius: 4px;
+         border-radius: 4px;
+    z-index: 99;
+    text-align: center;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st3 {
+    color: #fff;
+    background: #2952C1;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st4 {
+    color: #fff;
+    background: #14B3E0;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st5 {
+    color: #fff;
+    background: #939393;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st6 {
+    color: #fff;
+    background: #434343;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption {
+    width: 100%;
+    height: 48px;
+    position: absolute;
+    left: 0;
+    top: 354px;
+    line-height: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 99;
+    -moz-border-radius: 0 0 8px 8px;
+         border-radius: 0 0 8px 8px;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption img {
+    height: 25px;
+    width: auto;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption01 {
+    background: rgba(66, 206, 184, 0.9);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption02 {
+    background: rgba(152, 210, 84, 0.9);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption03 {
+    background: rgba(96, 135, 238, 0.9);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fundList ul li .right .dlist2 dl dd {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  .fundList ul li .right .dlist2 dl dd::before {
+    position: absolute;
+    content: "";
+    left: -2px;
+    bottom: -0px;
+    width: 120%;
+    height: 20px;
+    background: -webkit-gradient(linear, left top, right top, from(#ffe200), to(white));
+    background: -webkit-linear-gradient(left, #ffe200 0%, white 100%);
+    background: -moz- oldlinear-gradient(left, #ffe200 0%, white 100%);
+    background: linear-gradient(90deg, #ffe200 0%, white 100%);
+    -moz-border-radius: 2px 0 0 15px;
+         border-radius: 2px 0 0 15px;
+    -webkit-transform: rotate(-2deg);
+       -moz-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+    z-index: -1;
+  }
+  .fundList ul li .right .dlist2 dl dd.st2::before {
+    display: none;
+  }
+  .pChild__main .fundList.st2 ul li .right .dlist2 dl dd::before {
+    display: none;
+  }
+  .fundList ul li .right .dlist2 dl dd span {
+    background: none;
+    position: relative;
+  }
+  .fundList ul li .left {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+    border-width: 6px;
+    border-style: solid;
+    -moz-border-radius: 8px;
+         border-radius: 8px;
+  }
+  .fundList ul li .left .meta {
+    position: absolute;
+    top: 16px;
+    left: 15px;
+    width: 123px;
+    height: 35px;
+    -moz-border-radius: 4px;
+         border-radius: 4px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .fundList ul li .left .meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .fundList ul li .left .meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .fundList ul li .left .meta.st3 {
+    color: #FFEB00;
+    background: #2952C1;
+  }
+  .fundList ul li .left .meta.st4 {
+    color: #fff;
+    background: #14B3E0;
+  }
+  .fundList ul li .left .meta.st5 {
+    color: #fff;
+    background: #939393;
+  }
+  .fundList ul li .left .meta.st6 {
+    color: #fff;
+    background: #434343;
+  }
+  .fundList ul li .left .meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  }
+  .fundList ul li .left .caption {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    line-height: 0;
+    text-align: center;
+    padding: 7px 0;
+  }
+  .fundList ul li .left .caption img {
+    height: 17px;
+    width: auto;
+  }
+  .fundList ul li .left .caption.caption01 {
+    background: rgba(66, 206, 184, 0.9);
+  }
+  .fundList ul li .left .caption.caption02 {
+    background: rgba(152, 210, 84, 0.9);
+  }
+  .fundList ul li .left .caption.caption03 {
+    background: rgba(96, 135, 238, 0.9);
+  }
+  .fundList ul li .left.st1 {
+    border-color: #EF2E63;
+  }
+  .fundList ul li .left.st2 {
+    border-color: #F2911F;
+  }
+  .fundList ul li .left.st3 {
+    border-color: #2952C1;
+  }
+  .fundList ul li .left.st4 {
+    border-color: #14B3E0;
+  }
+  .fundList ul li .left.st5 {
+    border-color: #939393;
+  }
+  .fundList ul li .left.st6 {
+    border-color: #434343;
+  }
+  .fundList ul li .left.st7 {
+    border-color: #56B25D;
+  }
+  .fundList ul li .right .blk_meta .meta {
+    -moz-border-radius: 18px;
+         border-radius: 18px;
+  }
+  .fundList ul li .right .blk_meta .meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .fundList ul li .right .blk_meta .meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .fundList ul li .right .blk_meta .meta.st3 {
+    color: #fff;
+    background: #2952C1;
+  }
+  .fundList ul li .right .blk_meta .meta.st4 {
+    color: #fff;
+    background: #14B3E0;
+  }
+  .fundList ul li .right .blk_meta .meta.st5 {
+    color: #fff;
+    background: #939393;
+  }
+  .fundList ul li .right .blk_meta .meta.st6 {
+    color: #fff;
+    background: #434343;
+  }
+  .fundList ul li .right .blk_meta .meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  }
+  .fundList ul li .right .blk_meta .type {
+    min-width: 100px;
+    -moz-border-radius: 18px;
+         border-radius: 18px;
+    font-weight: 700;
+  }
+  .fundList ul li .right .blk_meta .type.type01 {
+    background: rgba(230, 86, 125, 0.2);
+    color: #E6567D;
+  }
+  .fundList ul li .right .blk_meta .type.type02 {
+    background: rgba(66, 150, 222, 0.2);
+    color: #4296DE;
+  }
+  .pChild__main .fundList.st2 ul li .left {
+    border: none;
+  }
+  .fundList.st2 ul li .right .blk_meta .meta {
+    margin-bottom: 10px;
+  }
+  .fundList.st2 ul li .right .blk_meta .type {
+    min-width: 59px;
+    margin-bottom: 10px;
+  }
+  .fundList.st2 ul li .right .blk_meta .tag {
+    margin-left: 8px;
+    background: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+  }
+  .fundList.st2 ul li .right .blk_meta .tag.tag1 {
+    border: 1px solid #42CEB8;
+    color: #42CEB8;
+  }
+  .fundList.st2 ul li .right .blk_meta .tag.tag2 {
+    border: 1px solid #98D254;
+    color: #98D254;
+  }
+  .fundList.st2 ul li .right .blk_meta .tag.tag3 {
+    border: 1px solid #6087EE;
+    color: #6087EE;
+  }
+  .pChild__main .fundList.st2 ul li .right .blk_meta .meta_tt {
+    margin-top: 0;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st3 {
+    color: #fff;
+    background: #2952C1;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st4 {
+    color: #fff;
+    background: #14B3E0;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st5 {
+    color: #fff;
+    background: #939393;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st6 {
+    color: #fff;
+    background: #434343;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st7 {
+    color: #fff;
+    background: #56B25D;
+  }
+  .p_fund_detail .dlist2 dl dd {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+    padding: 0 8.8px;
+  }
+  .p_fund_detail .dlist2 dl dd span {
+    background: none;
+  }
+  .p_fund_detail .dlist2 dl dd::before {
+    position: absolute;
+    content: "";
+    left: -2px;
+    bottom: -0px;
+    width: 120%;
+    height: 20px;
+    background: -webkit-gradient(linear, left top, right top, from(#ffe200), to(white));
+    background: -webkit-linear-gradient(left, #ffe200 0%, white 100%);
+    background: -moz- oldlinear-gradient(left, #ffe200 0%, white 100%);
+    background: linear-gradient(90deg, #ffe200 0%, white 100%);
+    -moz-border-radius: 2px 0 0 15px;
+         border-radius: 2px 0 0 15px;
+    -webkit-transform: rotate(-2deg);
+       -moz-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+    z-index: -1;
+  }
+  .p_fund_detail .dlist2 dl:nth-of-type(3) dd::before {
+    display: none;
+  }
+  .p_fund_detail .dlist03 dl dd span {
+    background: none;
+  }
+  .p_fund_detail .dlist2 > p span.type.type01 {
+    background: rgba(230, 86, 125, 0.2);
+    color: #E6567D;
+  }
+  .p_fund_detail .dlist2 > p span.type.type02 {
+    background: rgba(66, 150, 222, 0.2);
+    color: #4296DE;
+  }
+  .pChild .fundDetail__fea .intro span.tag {
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .pChild .fundDetail__fea .intro span.tag.tag1 {
+    background: #42CEB8;
+  }
+  .pChild .fundDetail__fea .intro span.tag.tag2 {
+    background: #98D254;
+  }
+  .pChild .fundDetail__fea .intro span.tag.tag3 {
+    background: #6087EE;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    color: #fff;
+    min-width: 123px;
+    font-size: 18px;
+    line-height: 27px;
+    padding: 4px 10px;
+    -moz-border-radius: 4px;
+         border-radius: 4px;
+    z-index: 99;
+    text-align: center;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st3 {
+    color: #fff;
+    background: #2952C1;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st4 {
+    color: #fff;
+    background: #14B3E0;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st5 {
+    color: #fff;
+    background: #939393;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st6 {
+    color: #fff;
+    background: #434343;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption {
+    width: 100%;
+    height: 48px;
+    position: absolute;
+    left: 0;
+    top: 354px;
+    line-height: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 99;
+    -moz-border-radius: 0 0 8px 8px;
+         border-radius: 0 0 8px 8px;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption img {
+    height: 25px;
+    width: auto;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption01 {
+    background: rgba(66, 206, 184, 0.9);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption02 {
+    background: rgba(152, 210, 84, 0.9);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption03 {
+    background: rgba(96, 135, 238, 0.9);
+  }
+}

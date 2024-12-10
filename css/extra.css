@@ -1,0 +1,129 @@
+@media screen and (min-width: 769px) {
+  .fundList ul li .right .dlist2 dl:last-child {
+    width: 100%;
+  }
+  .fundList.st2 ul li .right .dlist2 dl:last-child {
+    width: auto;
+  }
+  .fundList ul li .left figure img {
+    /* height: 306px; */
+    height: 280px;
+    object-fit: cover;
+  }
+  .p_fund_detail .blk_meta .meta {
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .pChild .fundDetail__desc--nav ul li a::after {
+    background: #56b25d;
+  }
+  .pChild .fundDetail__desc--nav ul li a:hover {
+    font-weight: bold;
+    color: #56b25d;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .galleryMain figure img {
+    height: 450px;
+    object-fit: cover;
+  }
+  .fundList ul li .right {
+    width: 610px;
+  }
+  .pChild__main .fundList.st2 ul li .right {
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .pChild__main .fundList.st2 ul li .right .blk_meta {
+    width: 380px;
+  }
+  .pChild__main .fundList.st2 ul li .right .dlist2 dl dd span {
+    font-weight: 500;
+    font-size: 16px;
+    color: #212121;
+  }
+  .pChild__main .fundList.st2 ul li .right .dlist2 dl dd {
+    font-weight: 500;
+    font-size: 16px;
+    color: #212121;
+  }
+  .fundList ul li .right .blk_meta .type {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fundList ul li .left figure img {
+    height: 61.02564vw;
+    object-fit: cover;
+  }
+  .fundList ul li .right .dlist2 {
+    -webkit-box-pack: justify;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .fundList ul li .right .dlist2 dl {
+    margin: 0;
+    width: 47.22222%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+       -moz-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    margin-top: 2.5641vw;
+  }
+  .fundList ul li .right .dlist2 dl:nth-of-type(3) {
+    width: 47.22222%;
+  }
+  .fundList ul li .right .dlist2 dl:nth-of-type(3) dd span {
+    font-size: 4.10256vw;
+  }
+  .fundList ul li .right .dlist2 dl dt {
+    font-size: 3.07692vw;
+    line-height: 4.61538vw;
+    font-weight: 400;
+  }
+  .fundList ul li .right .dlist2 dl dd {
+    font-weight: 500;
+    font-size: 4.61538vw;
+    line-height: 5.12821vw;
+    color: #212121;
+  }
+  .fundList ul li .right .dlist2 dl dd.st2 {
+    font-size: 4.10256vw;
+  }
+  .fundList ul li .right .dlist2 dl dd span {
+    font-weight: 700;
+    font-size: 6.15385vw;
+    line-height: 5.12821vw;
+    color: #0C8816;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .galleryMain figure img {
+    object-fit: cover;
+  }
+  .fundList ul li .right .dlist2 dl dd small {
+    display: none;
+  }
+  .pChild__main .fundList.st2 ul li .right .dlist2 dl dd {
+    font-weight: 500;
+    font-size: 3.6vw;
+    line-height: 5.12821vw;
+    color: #212121;
+  }
+  .pChild__main .fundList.st2 ul li .right .dlist2 dl dd span {
+    font-weight: 500;
+    font-size: 3.6vw;
+    line-height: 5.12821vw;
+    color: #212121;
+  }
+}

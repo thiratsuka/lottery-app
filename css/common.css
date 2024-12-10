@@ -1,0 +1,289 @@
+@charset "UTF-8";
+html {
+  font-size: 10px;
+}
+
+body {
+  overflow-wrap: break-word;
+}
+
+a,
+a:link,
+a:visited,
+a:active,
+a:hover,
+a:hover img {
+  text-decoration: none;
+  color: #212121;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:hover,
+a:hover img,
+.img_hover:hover {
+  filter: alpha(opacity=80);
+  -ms-filter: "alpha(opacity=80)";
+  opacity: .80;
+}
+
+a {
+  color: #212121;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+img {
+  vertical-align: bottom;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+div,
+p {
+  /*word-break: break-all;*/
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, nav, picture {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+body,
+td,
+th,
+input,
+textarea {
+  color: #212121;
+  font-family: "Inter", 'Noto Sans JP', "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+* {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+*::before, *::after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+figure, picture {
+  line-height: 0;
+}
+
+picture {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+}
+
+button {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+button:hover {
+  opacity: 0.7;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@-webkit-keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@-moz-keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+         transform: scale(1.1);
+  }
+}
+
+@keyframes hvr-pop {
+  50% {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+         transform: scale(1.1);
+  }
+}
+
+.effect, .isFull {
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.delay_03 {
+  -webkit-transition: all 1s ease 0.3s;
+  -moz-transition: all 1s ease 0.3s;
+  transition: all 1s ease 0.3s;
+}
+
+.delay_06 {
+  -webkit-transition: all 1s ease 0.6s;
+  -moz-transition: all 1s ease 0.6s;
+  transition: all 1s ease 0.6s;
+}
+
+.delay_09 {
+  -webkit-transition: all 1s ease 0.9s;
+  -moz-transition: all 1s ease 0.9s;
+  transition: all 1s ease 0.9s;
+}
+
+.delay_12 {
+  -webkit-transition: all 1s ease 1.2s;
+  -moz-transition: all 1s ease 1.2s;
+  transition: all 1s ease 1.2s;
+}
+
+.delay_15 {
+  -webkit-transition: all 1s ease 1.5s;
+  -moz-transition: all 1s ease 1.5s;
+  transition: all 1s ease 1.5s;
+}
+
+.fadeIn {
+  opacity: 0;
+}
+
+.fadeIn.active {
+  opacity: 1;
+}
+
+.slideUp {
+  -webkit-transform: translate3d(0, 30px, 0);
+     -moz-transform: translate3d(0, 30px, 0);
+          transform: translate3d(0, 30px, 0);
+  opacity: 0;
+}
+
+.slideUp.active {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.zoomIn {
+  -webkit-transform: scale(0.9);
+     -moz-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+  opacity: 0;
+}
+
+.zoomIn.active {
+  opacity: 1;
+  -webkit-transform: scale(1);
+     -moz-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.slideDown {
+  -webkit-transform: translate3d(0, -50px, 0);
+     -moz-transform: translate3d(0, -50px, 0);
+          transform: translate3d(0, -50px, 0);
+  opacity: 0;
+}
+
+.slideDown.active {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.slideToRight {
+  -webkit-transform: translate3d(-100px, 0, 0);
+     -moz-transform: translate3d(-100px, 0, 0);
+          transform: translate3d(-100px, 0, 0);
+  opacity: 0;
+}
+
+.slideToRight.active {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.slideToLeft {
+  -webkit-transform: translate3d(100px, 0, 0);
+     -moz-transform: translate3d(100px, 0, 0);
+          transform: translate3d(100px, 0, 0);
+  opacity: 0;
+}
+
+.slideToLeft.active {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+@font-face {
+  font-family: "BC Alphapipe SemiBold";
+  src: url("../fonts/BC_Alphapipe_TSB_Bold.ttf");
+}
+
+@font-face {
+  font-family: "BC Alphapipe Bold";
+  src: url("../fonts/BC_Alphapipe_RB_Bold.ttf");
+}

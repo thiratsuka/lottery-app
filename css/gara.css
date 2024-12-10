@@ -1,0 +1,624 @@
+@media screen and (min-width: 769px) {
+  .pChild__gara {
+    padding: 40px 0 160px;
+    background: #F7F7F0 url("../img/garaTown.png") bottom left repeat-x;
+  }
+  .pChild__gara--main {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+    background: #fff;
+    -moz-border-radius: 12px;
+         border-radius: 12px;
+    padding: 20px 160px 74px;
+  }
+  .pChild__gara--main--logo {
+    line-height: 0;
+    text-align: center;
+  }
+  .pChild__gara--main--logo a {
+    line-height: 0;
+    display: inline-block;
+    width: 196.66px;
+  }
+  .pChild__gara--main--logo a img {
+    width: 100%;
+    height: auto;
+  }
+  .pChild__gara--main--thumb {
+    margin-top: 20px;
+    -moz-border-radius: 8px;
+         border-radius: 8px;
+    overflow: hidden;
+  }
+  .pChild__gara--main--thumb img {
+    width: 100%;
+    height: auto;
+  }
+  .pChild__gara--main--price {
+    margin-top: 19px;
+    text-align: center;
+  }
+  .pChild__gara--main--price dl dt {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #192C3C;
+  }
+  .pChild__gara--main--price dl dd {
+    font-size: 42px;
+    line-height: 50px;
+    font-weight: 700;
+    color: #0C8816;
+    margin-top: 6px;
+    font-family: 'Inter',sans-serif;
+  }
+  .pChild__gara--main--file {
+    margin-top: 24px;
+  }
+  .pChild__gara--main--file label {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+  }
+  .pChild__gara--main--file label input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  .pChild__gara--main--file label span {
+    width: 100%;
+    height: 96px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: #F4F4EC;
+    -moz-border-radius: 12px;
+         border-radius: 12px;
+    border: 2px dashed #A08888;
+  }
+  .pChild__gara--main--file label span em {
+    font-style: normal;
+  }
+  .pChild__gara--main--file label span i {
+    width: 10.3px;
+    height: 10.3px;
+    background: url("../img/garaX.png") 0 0 no-repeat;
+    -moz-background-size: contain;
+         background-size: contain;
+    margin-left: 15px;
+    display: none;
+  }
+  .pChild__gara--main--file label span.sel i {
+    display: inline-block;
+  }
+  .pChild__gara--main--result {
+    border: 4px solid #194353;
+    -moz-border-radius: 12px;
+         border-radius: 12px;
+    height: 532px;
+    overflow: auto;
+    margin: 20px 0 0;
+    display: none;
+  }
+  .pChild__gara--main--result.open {
+    display: block;
+  }
+  .pChild__gara--main--result table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .pChild__gara--main--result table th, .pChild__gara--main--result table td {
+    border-bottom: 1px solid #DEDEDE;
+  }
+  .pChild__gara--main--result table thead tr th {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 700;
+    font-family: 'Inter',sans-serif;
+    padding: 10px;
+    text-align: right;
+  }
+  .pChild__gara--main--result table thead tr th:nth-of-type(1) {
+    text-align: left;
+  }
+  .pChild__gara--main--result table thead tr th:nth-of-type(3) {
+    padding: 10px 20px;
+  }
+  .pChild__gara--main--result table tbody tr {
+    border-bottom: 1px solid #DEDEDE;
+  }
+  .pChild__gara--main--result table tbody tr td {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    font-family: 'Inter',sans-serif;
+    padding: 10px;
+    text-align: right;
+  }
+  .pChild__gara--main--result table tbody tr td:nth-of-type(1) {
+    text-align: left;
+  }
+  .pChild__gara--main--result table tbody tr td:nth-of-type(3) {
+    padding: 10px 20px;
+  }
+  .pChild__gara--main--btn {
+    margin-top: 24px;
+  }
+  .pChild__gara--main--btn .video {
+    display: none;
+  }
+  .pChild__gara--main--btn .video video {
+    width: 100%;
+    height: auto;
+  }
+  .pChild__gara--main--btn button, .pChild__gara--main--btn a {
+    width: 100%;
+    height: 58px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -moz-border-radius: 8px;
+         border-radius: 8px;
+    color: #fff;
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: 700;
+    background: #F08428;
+    outline: none;
+    border: 0;
+    -moz-box-shadow: none;
+         box-shadow: none;
+    cursor: pointer;
+  }
+  .pChild__gara.reward {
+    padding-top: 24px;
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  .pChild__gara.reward::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 549px;
+    background: url("../img/garaBg.png") top center no-repeat;
+    -moz-background-size: contain;
+         background-size: contain;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  .pChild__gara.reward .reward__main {
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+  }
+  .pChild__gara.reward .reward__main--top {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+       -moz-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .pChild__gara.reward .reward__main--top .left {
+    width: 329px;
+  }
+  .pChild__gara.reward .reward__main--top .right {
+    width: 439px;
+  }
+  .pChild__gara.reward .reward__main--list {
+    margin-top: 24px;
+    -moz-border-radius: 12px;
+         border-radius: 12px;
+    border: 4px solid #194353;
+    height: 532px;
+    overflow: auto;
+    background: #fff;
+  }
+  .pChild__gara.reward .reward__main--list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .pChild__gara.reward .reward__main--list table th, .pChild__gara.reward .reward__main--list table td {
+    border-bottom: 1px solid #DEDEDE;
+  }
+  .pChild__gara.reward .reward__main--list table thead tr th {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 700;
+    font-family: 'Inter',sans-serif;
+    padding: 10px;
+    text-align: right;
+  }
+  .pChild__gara.reward .reward__main--list table thead tr th:nth-of-type(1) {
+    text-align: left;
+  }
+  .pChild__gara.reward .reward__main--list table thead tr th:nth-of-type(3) {
+    padding: 10px 20px;
+  }
+  .pChild__gara.reward .reward__main--list table tbody tr {
+    border-bottom: 1px solid #DEDEDE;
+  }
+  .pChild__gara.reward .reward__main--list table tbody tr td {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    font-family: 'Inter',sans-serif;
+    padding: 10px;
+    text-align: right;
+  }
+  .pChild__gara.reward .reward__main--list table tbody tr td:nth-of-type(1) {
+    text-align: left;
+  }
+  .pChild__gara.reward .reward__main--list table tbody tr td:nth-of-type(3) {
+    padding: 10px 20px;
+  }
+  .pChild__gara--video {
+    line-height: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: #000;
+    height: 100vh;
+  }
+  .pChild__gara--video video {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh;
+  }
+  .pChild__gara--play {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .pChild__gara {
+    padding: 10.25641vw 0 46.15385vw;
+    background: #F7F7F0 url("../img/garaTown.png") bottom left repeat-x;
+    -moz-background-size: auto 15.64103vw;
+         background-size: auto 15.64103vw;
+  }
+  .pChild__gara--main {
+    width: 92.30769vw;
+    margin: auto;
+    background: #fff;
+    -moz-border-radius: 3.07692vw;
+         border-radius: 3.07692vw;
+    padding: 5.12821vw 3.84615vw;
+  }
+  .pChild__gara--main--logo {
+    line-height: 0;
+    text-align: center;
+  }
+  .pChild__gara--main--logo a {
+    line-height: 0;
+    display: inline-block;
+    width: 51.28205vw;
+  }
+  .pChild__gara--main--logo a img {
+    width: 100%;
+    height: auto;
+  }
+  .pChild__gara--main--thumb {
+    margin-top: 5.12821vw;
+    -moz-border-radius: 2.05128vw;
+         border-radius: 2.05128vw;
+    overflow: hidden;
+  }
+  .pChild__gara--main--thumb img {
+    width: 100%;
+    height: auto;
+  }
+  .pChild__gara--main--price {
+    margin-top: 4.87179vw;
+    text-align: center;
+  }
+  .pChild__gara--main--price dl dt {
+    font-size: 4.10256vw;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #192C3C;
+  }
+  .pChild__gara--main--price dl dd {
+    font-size: 8.2vw;
+    line-height: 1.5;
+    font-weight: 700;
+    color: #0C8816;
+    margin-top: 0vw;
+    font-family: 'Inter',sans-serif;
+  }
+  .pChild__gara--main--file {
+    margin-top: 6.15385vw;
+  }
+  .pChild__gara--main--file label {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+  }
+  .pChild__gara--main--file label input {
+    position: absolute;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  .pChild__gara--main--file label span {
+    width: 100%;
+    height: 25.64103vw;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background: #F4F4EC;
+    -moz-border-radius: 3.07692vw;
+         border-radius: 3.07692vw;
+    border: 2px dashed #A08888;
+  }
+  .pChild__gara--main--file label span em {
+    font-style: normal;
+  }
+  .pChild__gara--main--file label span i {
+    width: 3.84615vw;
+    height: 3.84615vw;
+    background: url("../img/garaX.png") 0 0 no-repeat;
+    -moz-background-size: contain;
+         background-size: contain;
+    margin-left: 3.84615vw;
+    display: none;
+  }
+  .pChild__gara--main--file label span.sel i {
+    display: inline-block;
+  }
+  .pChild__gara--main--result {
+    border: 4px solid #194353;
+    -moz-border-radius: 12px;
+         border-radius: 12px;
+    height: 532px;
+    overflow: auto;
+    margin: 20px 0 0;
+    display: none;
+  }
+  .pChild__gara--main--result.open {
+    display: block;
+  }
+  .pChild__gara--main--result table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .pChild__gara--main--result table th, .pChild__gara--main--result table td {
+    border-bottom: 1px solid #DEDEDE;
+  }
+  .pChild__gara--main--result table thead tr th {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 700;
+    font-family: 'Inter',sans-serif;
+    padding: 10px;
+    text-align: right;
+  }
+  .pChild__gara--main--result table thead tr th:nth-of-type(1) {
+    text-align: left;
+  }
+  .pChild__gara--main--result table thead tr th:nth-of-type(3) {
+    padding: 10px 20px;
+  }
+  .pChild__gara--main--result table tbody tr {
+    border-bottom: 1px solid #DEDEDE;
+  }
+  .pChild__gara--main--result table tbody tr td {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    font-family: 'Inter',sans-serif;
+    padding: 10px;
+    text-align: right;
+  }
+  .pChild__gara--main--result table tbody tr td:nth-of-type(1) {
+    text-align: left;
+  }
+  .pChild__gara--main--result table tbody tr td:nth-of-type(3) {
+    padding: 10px 20px;
+  }
+  .pChild__gara--main--btn {
+    margin-top: 6.15385vw;
+  }
+  .pChild__gara--main--btn .video {
+    display: none;
+  }
+  .pChild__gara--main--btn .video video {
+    width: 100%;
+    height: auto;
+  }
+  .pChild__gara--main--btn button, .pChild__gara--main--btn a {
+    width: 100%;
+    height: 14.87179vw;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -moz-border-radius: 2.05128vw;
+         border-radius: 2.05128vw;
+    color: #fff;
+    font-size: 5.12821vw;
+    line-height: 1.5;
+    font-weight: 700;
+    background: #F08428;
+    outline: none;
+    border: 0;
+    -moz-box-shadow: none;
+         box-shadow: none;
+    cursor: pointer;
+  }
+  .pChild__gara.reward {
+    padding-top: 6.15385vw;
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  .pChild__gara.reward::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 70.38462vw;
+    background: url("../img/garaBg.png") top center no-repeat;
+    -moz-background-size: contain;
+         background-size: contain;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+  .pChild__gara.reward .reward__main {
+    width: 92.30769vw;
+    margin: auto;
+  }
+  .pChild__gara.reward .reward__main--top {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+       -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+       -moz-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+  }
+  .pChild__gara.reward .reward__main--top .left {
+    width: 40%;
+  }
+  .pChild__gara.reward .reward__main--top .right {
+    width: 58%;
+  }
+  .pChild__gara.reward .reward__main--list {
+    margin-top: 6.15385vw;
+    -moz-border-radius: 3.07692vw;
+         border-radius: 3.07692vw;
+    border: 4px solid #194353;
+    height: 102.5641vw;
+    overflow: auto;
+    background: #fff;
+  }
+  .pChild__gara.reward .reward__main--list table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .pChild__gara.reward .reward__main--list table th, .pChild__gara.reward .reward__main--list table td {
+    border-bottom: 1px solid #DEDEDE;
+  }
+  .pChild__gara.reward .reward__main--list table thead tr th {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 700;
+    font-family: 'Inter',sans-serif;
+    padding: 10px;
+    text-align: right;
+  }
+  .pChild__gara.reward .reward__main--list table thead tr th:nth-of-type(1) {
+    text-align: left;
+  }
+  .pChild__gara.reward .reward__main--list table thead tr th:nth-of-type(3) {
+    padding: 10px 20px;
+  }
+  .pChild__gara.reward .reward__main--list table tbody tr {
+    border-bottom: 1px solid #DEDEDE;
+  }
+  .pChild__gara.reward .reward__main--list table tbody tr td {
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: 400;
+    font-family: 'Inter',sans-serif;
+    padding: 10px;
+    text-align: right;
+  }
+  .pChild__gara.reward .reward__main--list table tbody tr td:nth-of-type(1) {
+    text-align: left;
+  }
+  .pChild__gara--video {
+    line-height: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: #000;
+    height: 100vh;
+  }
+  .pChild__gara--video video {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100vh;
+  }
+  .pChild__gara--play {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+}

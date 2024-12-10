@@ -1,0 +1,851 @@
+body {
+font-feature-settings: "palt";
+/* text-align: justify; */
+text-justify: inter-ideograph;
+ -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0em;
+}
+
+@media screen and (min-width: 769px) {
+  .fundList ul li .right .dlist2 dl dd {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  .fundList ul li .right .dlist2 dl dd::before {
+    position: absolute;
+    content: "";
+    left: -2px;
+    bottom: 5px;
+    width: 120%;
+    height: 20px;
+    background: -webkit-gradient(linear, left top, right top, from(#ffe200), to(white));
+    background: -webkit-linear-gradient(left, #ffe200 0%, white 100%);
+    background: -moz- oldlinear-gradient(left, #ffe200 0%, white 100%);
+    background: linear-gradient(90deg, #ffe200 0%, white 100%);
+    -moz-border-radius: 2px 0 0 15px;
+         border-radius: 2px 0 0 15px;
+    -webkit-transform: rotate(-2deg);
+       -moz-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+    z-index: -1;
+  }
+  .fundList ul li .right .dlist2 dl dd.st2::before {
+    display: none;
+  }
+  .pChild__main .fundList.st2 ul li .right .dlist2 dl dd::before {
+    display: none;
+  }
+  .fundList ul li .right .dlist2 dl dd span {
+    background: none;
+    position: relative;
+  }
+  .fundList ul li .left {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+    border-width: 4px;
+    border-style: solid;
+    -moz-border-radius: 8px;
+         border-radius: 8px;
+  }
+  .fundList ul li .left .meta {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    /* min-width: 111px; */
+    height: 28px;
+    padding: 0 16px;
+    -moz-border-radius: 18px;
+         border-radius: 18px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .fundList ul li .left .meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .fundList ul li .left .meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .fundList ul li .left .meta.st3 {
+    color: #fff;
+    background: #FC6499;
+  }
+  .fundList ul li .left .meta.st4 {
+    color: #fff;
+    background: #939393;
+  }
+  .fundList ul li .left .meta.st5 {
+    color: #fff;
+    background: #8DCB17;
+  }
+  .fundList ul li .left .meta.st6 {
+    color: #fff;
+    background: #56B25D;
+  }
+  /* .fundList ul li .left .meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  } */
+  .fundList ul li .left .caption {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    line-height: 0;
+    text-align: center;
+    padding: 7px 0;
+  }
+  .fundList ul li .left .caption img {
+    height: 17px;
+    width: auto;
+  }
+  .fundList ul li .left .caption.caption01 {
+    background: rgba(66, 206, 184, 0.9);
+  }
+  .fundList ul li .left .caption.caption02 {
+    background: rgba(152, 210, 84, 0.9);
+  }
+  .fundList ul li .left .caption.caption03 {
+    background: rgba(96, 135, 238, 0.9);
+  }
+  .fundList ul li .left.st1 {
+    border-color: #EF2E63;
+  }
+  .fundList ul li .left.st2 {
+    border-color: #F2911F;
+  }
+  .fundList ul li .left.st3 {
+    border-color: #FC6499;
+  }
+  .fundList ul li .left.st4 {
+    border-color: #939393;
+  }
+  .fundList ul li .left.st5 {
+    border-color: #8DCB18;
+  }
+  .fundList ul li .left.st6 {
+    border-color: #56B25D;
+  }
+  /* .fundList ul li .left.st7 {
+    border-color: #56B25D;
+  } */
+  .fundList ul li .right .blk_meta .meta {
+    min-width: auto;
+    -moz-border-radius: 18px;
+         border-radius: 18px;
+    font-size: 14px;
+  }
+  .fundList ul li .right .blk_meta .meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .fundList ul li .right .blk_meta .meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .fundList ul li .right .blk_meta .meta.st3 {
+    color: #fff;
+    background: #FC6499;
+  }
+  .fundList ul li .right .blk_meta .meta.st4 {
+    color: #fff;
+    background: #939393;
+  }
+  .fundList ul li .right .blk_meta .meta.st5 {
+    color: #fff;
+    background: #8DCB17;
+  }
+  .fundList ul li .right .blk_meta .meta.st6 {
+    color: #fff;
+    background: #56B25D;
+  }
+  /* .fundList ul li .right .blk_meta .meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  } */
+  .fundList ul li .right .blk_meta .type {
+    /* min-width: 100px; */
+    min-width: auto;
+    padding: 0 16px;
+    margin-right: 8px;
+    -moz-border-radius: 14px;
+         border-radius: 14px;
+    font-weight: 700;
+  }
+  .fundList ul li .right .blk_meta .type.tag {
+    margin-right: 0;
+  }
+  .fundList ul li .right .blk_meta .type.type01 {
+    background: #17B4E3;
+    color: #fff;
+  }
+  .fundList ul li .right .blk_meta .type.type02 {
+    background: #3466EA;
+    color: #fff;
+  }
+  .fundList ul li .right .blk_meta .type.type03 {
+    background: #3F32DD;
+    color: #fff;
+  }
+  .pChild__main .fundList.st2 ul li .left {
+    border: none;
+  }
+  .fundList.st2 ul li .right .blk_meta .meta {
+    margin-bottom: 10px;
+  }
+  .fundList.st2 ul li .right .blk_meta .type {
+    /* min-width: 59px; */
+    margin-bottom: 10px;
+  }
+  .fundList ul li .right .blk_meta .tag {
+    background: #fff;
+    padding: 0 16px;
+  }
+  .fundList ul li .right .blk_meta .tag.tag1 {
+    background: rgba(230,86,125,0.2);
+    color: #E6567D;
+  }
+  .fundList ul li .right .blk_meta .tag.tag2 {
+    background: rgba(66,150,222,0.2);
+    color: #4296DE;
+  }
+  /* .fundList ul li .right .blk_meta .tag.tag3 {
+    border: 1px solid #6087EE;
+    color: #6087EE;
+  } */
+  .pChild__main .fundList.st2 ul li .right .blk_meta .meta_tt {
+    margin-top: 0;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st3 {
+    color: #fff;
+    background: #FC6499;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st4 {
+    color: #fff;
+    background: #939393;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st5 {
+    color: #fff;
+    background: #8DCB17;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st6 {
+    color: #fff;
+    background: #56B25D;
+  }
+  /* .p_fund_detail .blk_meta .meta .cate.st7 {
+    color: #fff;
+    background: #56B25D;
+  } */
+  .p_fund_detail .dlist2 dl dd {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+    padding: 0 8.8px;
+  }
+  .p_fund_detail .dlist2 dl dd span {
+    background: none;
+  }
+  .p_fund_detail .dlist2 dl dd::before {
+    position: absolute;
+    content: "";
+    left: -2px;
+    bottom: 5px;
+    width: 120%;
+    height: 20px;
+    background: -webkit-gradient(linear, left top, right top, from(#ffe200), to(white));
+    background: -webkit-linear-gradient(left, #ffe200 0%, white 100%);
+    background: -moz- oldlinear-gradient(left, #ffe200 0%, white 100%);
+    background: linear-gradient(90deg, #ffe200 0%, white 100%);
+    -moz-border-radius: 2px 0 0 15px;
+         border-radius: 2px 0 0 15px;
+    -webkit-transform: rotate(-2deg);
+       -moz-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+    z-index: -1;
+  }
+  .p_fund_detail .dlist2 dl:nth-of-type(3) dd::before {
+    display: none;
+  }
+  .p_fund_detail .dlist03 dl dd span {
+    background: none;
+  }
+  .p_fund_detail .dlist2 > p span.type.type01 {
+    color: #fff;
+    background: #17B4E3;
+  }
+  .p_fund_detail .dlist2 > p span.type.type02 {
+    color: #fff;
+    background: #3466EA;
+  }
+  .p_fund_detail .dlist2 > p span.type.type03 {
+    color: #fff;
+    background: #3F32DD;
+  }
+  .pChild .fundDetail__fea .intro span.tag {
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .pChild .fundDetail__fea .intro span.tag.tag1 {
+    background: rgba(230, 86, 125, 0.2);
+    color: #E6567D;
+  }
+  .pChild .fundDetail__fea .intro span.tag.tag2 {
+    background: rgba(66, 150, 222, 0.2);
+    color: #4296DE;
+  }
+  /* .pChild .fundDetail__fea .intro span.tag.tag3 {
+    background: #6087EE;
+  } */
+  .p_fund_detail.pChild .fundDetail__fea .gallery {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    color: #fff;
+    /* min-width: 123px; */
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 27px;
+    padding: 4px 16px;
+    -moz-border-radius: 4px;
+         border-radius: 4px;
+    z-index: 99;
+    text-align: center;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st3 {
+    color: #fff;
+    background: #FC6499;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st4 {
+    color: #fff;
+    background: #939393;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st5 {
+    color: #fff;
+    background: #8DCB17;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st6 {
+    color: #fff;
+    background: #56B25D;
+  }
+  /* .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  } */
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption {
+    width: 100%;
+    height: 48px;
+    position: absolute;
+    left: 0;
+    top: 402px;
+    line-height: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 99;
+    -moz-border-radius: 0 0 8px 8px;
+         border-radius: 0 0 8px 8px;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption img {
+    height: 25px;
+    width: auto;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption01 {
+    background: rgba(66, 206, 184, 0.9);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption02 {
+    background: rgba(152, 210, 84, 0.9);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption03 {
+    background: rgba(96, 135, 238, 0.9);
+  }
+  .p_fund_detail .dlist2 > p span {
+    font-weight: 700;
+    min-width: auto;
+    padding: 0 16px;
+  }
+  .fundList ul li .left figure {
+    -moz-border-radius: 0;
+         border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .fundList ul li .right .dlist2 dl dd {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  .fundList ul li .right .dlist2 dl dd::before {
+    position: absolute;
+    content: "";
+    left: -2px;
+    bottom: 1.02564vw;
+    width: 110%;
+    height: 3.84615vw;
+    background: -webkit-gradient(linear, left top, right top, from(#ffe200), to(white));
+    background: -webkit-linear-gradient(left, #ffe200 0%, white 100%);
+    background: -moz- oldlinear-gradient(left, #ffe200 0%, white 100%);
+    background: linear-gradient(90deg, #ffe200 0%, white 100%);
+    -moz-border-radius: 2px 0 0 15px;
+         border-radius: 2px 0 0 15px;
+    -webkit-transform: rotate(-2deg);
+       -moz-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+    z-index: -1;
+  }
+  .fundList ul li .right .dlist2 dl dd.st2::before {
+    display: none;
+  }
+  .pChild__main .fundList.st2 ul li .right .dlist2 dl dd::before {
+    display: none;
+  }
+  .fundList ul li .right .dlist2 dl dd span {
+    background: none;
+    position: relative;
+  }
+  .fundList ul li .left {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+    border-width: 1.02564vw;
+    border-style: solid;
+    -moz-border-radius: 1.53846vw;
+         border-radius: 1.53846vw;
+  }
+  .fundList ul li .left .meta {
+    position: absolute;
+    top: 3.28205vw;
+    left: 3.07692vw;
+    /* width: 25.23077vw; */
+    height: 7.17949vw;
+    -moz-border-radius: 3.69231vw;
+         border-radius: 3.69231vw;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .fundList ul li .left .meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .fundList ul li .left .meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .fundList ul li .left .meta.st3 {
+    color: #fff;
+    background: #FC6499;
+  }
+  .fundList ul li .left .meta.st4 {
+    color: #fff;
+    background: #939393;
+  }
+  .fundList ul li .left .meta.st5 {
+    color: #fff;
+    background: #8DCB17;
+  }
+  .fundList ul li .left .meta.st6 {
+    color: #fff;
+    background: #56B25D;
+  }
+  /* .fundList ul li .left .meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  } */
+  .fundList ul li .left .caption {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    line-height: 0;
+    text-align: center;
+    padding: 1.4359vw 0;
+  }
+  .fundList ul li .left .caption img {
+    height: 3.48718vw;
+    width: auto;
+  }
+  .fundList ul li .left .caption.caption01 {
+    background: rgba(66, 206, 184, 0.9);
+  }
+  .fundList ul li .left .caption.caption02 {
+    background: rgba(152, 210, 84, 0.9);
+  }
+  .fundList ul li .left .caption.caption03 {
+    background: rgba(96, 135, 238, 0.9);
+  }
+  .fundList ul li .left.st1 {
+    border-color: #EF2E63;
+  }
+  .fundList ul li .left.st2 {
+    border-color: #F2911F;
+  }
+  .fundList ul li .left.st3 {
+    border-color: #FC6499;
+  }
+  .fundList ul li .left.st4 {
+    border-color: #939393;
+  }
+  .fundList ul li .left.st5 {
+    border-color: #8DCB18;
+  }
+  .fundList ul li .left.st6 {
+    border-color: #56B25D;
+  }
+  /* .fundList ul li .left.st7 {
+    border-color: #56B25D;
+  } */
+  .fundList ul li .right .blk_meta .meta {
+    -moz-border-radius: 3.69231vw;
+         border-radius: 3.69231vw;
+  }
+  .fundList ul li .right .blk_meta .meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .fundList ul li .right .blk_meta .meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .fundList ul li .right .blk_meta .meta.st3 {
+    color: #fff;
+    background: #FC6499;
+  }
+  .fundList ul li .right .blk_meta .meta.st4 {
+    color: #fff;
+    background: #939393;
+  }
+  .fundList ul li .right .blk_meta .meta.st5 {
+    color: #fff;
+    background: #8DCB17;
+  }
+  .fundList ul li .right .blk_meta .meta.st6 {
+    color: #fff;
+    background: #56B25D;
+  }
+  /* .fundList ul li .right .blk_meta .meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  } */
+  .fundList ul li .right .blk_meta .type {
+    /* min-width: 20.51282vw; */
+    min-width: auto;
+    padding: 0 1.93236vw;
+    -moz-border-radius: 3.69231vw;
+         border-radius: 3.69231vw;
+    font-weight: 700;
+    margin-right: 2.05128vw;
+  }
+  .fundList ul li .right .blk_meta .type.tag {
+    margin-right: 0;
+  }
+  .fundList ul li .right .blk_meta .type.type01 {
+    background: #17B4E3;
+    color: #fff;
+  }
+  .fundList ul li .right .blk_meta .type.type02 {
+    background: #3466EA;
+    color: #fff;
+  }
+  .fundList ul li .right .blk_meta .type.type03 {
+    background: #3F32DD;
+    color: #fff;
+  }
+  .pChild__main .fundList.st2 ul li .left {
+    border: none;
+  }
+  .fundList.st2 ul li .right .blk_meta .meta {
+    margin-bottom: 10px;
+  }
+  .fundList.st2 ul li .right .blk_meta .type {
+    /* min-width: 12.10256vw; */
+    min-width: auto;
+    margin-bottom: 2.05128vw;
+    margin-right: 2.05128vw;
+  }
+  .fundList ul li .right .blk_meta .tag {
+    padding-left: 2.05128vw;
+    padding-right: 2.05128vw;
+  }
+  .fundList ul li .right .blk_meta .tag.tag1 {
+    background: rgba(230,86,125,0.2);
+    color: #E6567D;
+  }
+  .fundList ul li .right .blk_meta .tag.tag2 {
+    background: rgba(66,150,222,0.2);
+    color: #4296DE;
+  }
+  /* .fundList ul li .right .blk_meta .tag.tag3 {
+    border: 1px solid #6087EE;
+    color: #6087EE;
+  } */
+  .pChild__main .fundList.st2 ul li .right .blk_meta .meta_tt {
+    margin-top: 0;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st3 {
+    color: #fff;
+    background: #FC6499;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st4 {
+    color: #fff;
+    background: #939393;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st5 {
+    color: #fff;
+    background: #8DCB17;
+  }
+  .p_fund_detail .blk_meta .meta .cate.st6 {
+    color: #fff;
+    background: #56B25D;
+  }
+  /* .p_fund_detail .blk_meta .meta .cate.st7 {
+    color: #fff;
+    background: #56B25D;
+  } */
+  .p_fund_detail .dlist2 dl dd {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+    padding: 0 1.64103vw;
+  }
+  .p_fund_detail .dlist2 dl dd span {
+    background: none;
+  }
+  .p_fund_detail .dlist2 dl dd::before {
+    position: absolute;
+    content: "";
+    left: -2px;
+    bottom: 1.02564vw;
+    width: 120%;
+    height: 4.10256vw;
+    background: -webkit-gradient(linear, left top, right top, from(#ffe200), to(white));
+    background: -webkit-linear-gradient(left, #ffe200 0%, white 100%);
+    background: -moz- oldlinear-gradient(left, #ffe200 0%, white 100%);
+    background: linear-gradient(90deg, #ffe200 0%, white 100%);
+    -moz-border-radius: 2px 0 0 15px;
+         border-radius: 2px 0 0 15px;
+    -webkit-transform: rotate(-2deg);
+       -moz-transform: rotate(-2deg);
+        -ms-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+    z-index: -1;
+  }
+  .p_fund_detail .dlist2 dl:nth-of-type(3) dd::before {
+    display: none;
+  }
+  .p_fund_detail .dlist03 dl dd span {
+    background: none;
+  }
+  .p_fund_detail .dlist2 > p span.type.type01 {
+    color: #fff;
+    background: #17B4E3;
+  }
+  .p_fund_detail .dlist2 > p span.type.type02 {
+    color: #fff;
+    background: #3466EA;
+  }
+  .p_fund_detail .dlist2 > p span.type.type03 {
+    color: #fff;
+    background: #3F32DD;
+  }
+  .pChild .fundDetail__fea .intro span.tag {
+    margin-bottom: 8px;
+    color: #fff;
+  }
+  .pChild .fundDetail__fea .intro span.tag.tag1 {
+    background: rgba(230, 86, 125, 0.2);
+    color: #E6567D;
+  }
+  .pChild .fundDetail__fea .intro span.tag.tag2 {
+    background: rgba(66, 150, 222, 0.2);
+    color: #4296DE;
+  }
+  /* .pChild .fundDetail__fea .intro span.tag.tag3 {
+    background: #6087EE;
+  } */
+  .p_fund_detail.pChild .fundDetail__fea .gallery {
+    position: relative;
+    -webkit-transform: translateZ(0);
+       -moz-transform: translateZ(0);
+            transform: translateZ(0);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta {
+    position: absolute;
+    top: 2.46154vw;
+    left: 3.28205vw;
+    color: #fff;
+    font-weight: bold;
+    /* min-width: 25.23077vw; */
+    font-size: 3.69231vw;
+    line-height: 5.53846vw;
+    padding: 0.82051vw 2.05128vw;
+    -moz-border-radius: 0.82051vw;
+         border-radius: 0.82051vw;
+    z-index: 99;
+    text-align: center;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st1 {
+    color: #fff;
+    background: #EF2E63;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st2 {
+    color: #fff;
+    background: #F2911F;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st3 {
+    color: #fff;
+    background: #FC6499;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st4 {
+    color: #fff;
+    background: #939393;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st5 {
+    color: #fff;
+    background: #8DCB17;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st6 {
+    color: #fff;
+    background: #56B25D;
+  }
+  /* .p_fund_detail.pChild .fundDetail__fea .gallery__meta.st7 {
+    color: #fff;
+    background: #56B25D;
+  } */
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption {
+    width: 100%;
+    height: 9.84615vw;
+    position: absolute;
+    left: 0;
+    top: 56.66667vw;
+    line-height: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 99;
+    -moz-border-radius: 0 0 1.64103vw 1.64103vw;
+         border-radius: 0 0 1.64103vw 1.64103vw;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption img {
+    height: 5.12821vw;
+    width: auto;
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption01 {
+    background: rgba(66, 206, 184, 0.9);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption02 {
+    background: rgba(152, 210, 84, 0.9);
+  }
+  .p_fund_detail.pChild .fundDetail__fea .gallery__caption.caption03 {
+    background: rgba(96, 135, 238, 0.9);
+  }
+  .p_fund_detail .dlist2 > p span {
+    font-weight: 700;
+    min-width: auto;
+  }
+  .fundList ul li .left figure {
+    -moz-border-radius: 0;
+         border-radius: 0;
+  }
+}
+
+.fundList ul li .left figure.thanks {
+  position: relative;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.fundList ul li .left figure.thanks::after {
+  position: absolute;
+  content: "";
+  width: 58%;
+  height: 48%;
+  background: url('../img/thanks.png') 0 0 no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUNDI</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="FUNDI">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FUNDI">
+  <meta property="og:description" content="FUNDI">
+  <meta property="og:url" content="https://">
+  <meta property="og:site_name" content="FUNDI">
+
+  <meta property="og:image" content="" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/swiper.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/extra.css">
+  <link rel="stylesheet" href="./css/add.css">
+  <link rel="stylesheet" href="./css/gara.css">
+</head>
+
+<body class="pChild">
+  <div id="container" class="container">
+    <main>
+      <div class="pChild__gara--video">
+        <video src="./rattle.mp4" controls playsinline   ></video>
+      </div>
+      <a class="pChild__gara--play" href="">Play Video</a>
+    </main>
+  </div>
+  <script src="./js/libs.js"></script>
+  <!-- <script src="./js/gara.js"></script> -->
+  <!-- <script src="./js/script.js"></script> <-->
+    <script>
+
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelector('.pChild__gara--play').addEventListener('click',function(e){
+        e.preventDefault();
+        document.querySelector('video').controls = false;
+        document.querySelector('video').play();
+      })
+      document.querySelector('video').play();
+      document.querySelector('video').controls = false;
+      document.querySelector('.pChild__gara--play').click();
+    })
+    </script>
+</body>
+
+</html>

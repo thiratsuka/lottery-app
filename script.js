@@ -1,4 +1,4 @@
-console.log("2024/12/09 v6 - Debug version");
+console.log("2024/12/10 v1");
 
 // 抽選結果を保存するための変数
 let currentResults = null;
