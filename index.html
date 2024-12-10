@@ -2,50 +2,314 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fundi抽選アプリ</title>
-    <link rel="stylesheet" href="./styles/style.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUNDI</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="FUNDI">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="FUNDI">
+  <meta property="og:description" content="FUNDI">
+  <meta property="og:url" content="https://">
+  <meta property="og:site_name" content="FUNDI">
+
+  <meta property="og:image" content="" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/swiper.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/extra.css">
+  <link rel="stylesheet" href="./css/add.css">
+  <link rel="stylesheet" href="./css/gara.css">
 </head>
 
-<body>
-    <header>
-        <h1>🎯 fundi抽選アプリ</h1>
-    </header>
+<body class="pChild">
+  <div id="container" class="container">
     <main>
-        <section id="抽選">
-            <h2>抽選設定</h2>
-            <form id="lottery-form">
-                <label for="csv-file">CSVファイルをアップロード:</label>
-                <input type="file" id="csv-file" accept=".csv" required>
-                <br><br>
-                <label for="budget">抽選予算金額:</label>
-                <input type="number" id="budget" name="budget" min="1" required>
-                <br><br>
-                <label for="exclude">除外するメールアドレス (カンマ区切り):</label>
-                <input type="text" id="exclude" name="exclude"
-                    placeholder="例: sample1@example.com, sample2@example.com">
-                <br><br>
-                <button type="button" onclick="submitForm()">抽選開始</button>
-            </form>
-            <div id="result">
-                <!-- 抽選結果がここに表示されます -->
-            </div>
-            <div id="download-area" style="display: none; margin-top: 20px;">
-                <button onclick="downloadResults()">結果をCSVでダウンロード</button>
-            </div>
-        </section>
-        <section id="履歴" style="margin-top: 40px;">
-            <h2>抽選履歴</h2>
-            <button onclick="clearHistory()">履歴を削除</button>
-            <div id="history-list">
-            </div>
-        </section>
+      <div class="pChild__gara">
+        <div class="pChild__gara--main">
+          <div class="pChild__gara--main--logo"><a href="./"><img src="./img/garaLogo.png" alt=""></a></div>
+          <figure class="pChild__gara--main--thumb">
+            <img src="./img/garaThumb.jpg" alt="">
+          </figure>
+          <div class="pChild__gara--main--price">
+            <dl>
+              <dt>抽選予定金額</dt>
+              <dd>¥1,282,500,000</dd>
+            </dl>
+          </div>
+          <div class="pChild__gara--main--file">
+            <label>
+              <input type="file" id="file">
+              <span><em>ファイルをアップロード</em><i id="resetFile"></i></span>
+            </label>
+          </div>
+          <div class="pChild__gara--main--result" id="result">
+            <table>
+              <thead>
+                <tr>
+                  <th>メールアドレス</th>
+                  <th>口数</th>
+                  <th>金額</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr>
+                <tr>
+                  <td>examplexxxxx@xxxxx.com</td>
+                  <td>10</td>
+                  <td>¥500,000</td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+          <div class="pChild__gara--main--btn">
+            <a href="./gara1.html">抽選開始</a>
+          </div>
+        </div>
+      </div>
     </main>
-    <footer>
-        <p>&copy; 2024 fundi All Rights Reserved.</p>
-    </footer>
-    <script src="script.js"></script>
+  </div>
+  <script src="./js/libs.js"></script>
+  <script src="./js/gara.js"></script>
+
+  <script>
+    document.getElementById('file').addEventListener('change', function (event) {
+        // ローカルストレージをリセット
+        localStorage.removeItem('participants');
+        localStorage.removeItem('lotteryResults');
+
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+          const csvData = e.target.result;
+          const rows = csvData.split('\n').slice(1); // Remove header row
+          const tbody = document.querySelector('#result tbody');
+          tbody.innerHTML = ''; // Clear existing rows
+
+          let participants = [];
+
+          rows.forEach(row => {
+            if (row.trim()) {
+              const [customerNumber, lotCount, amount, email] = row.split(',');
+
+              // 口数が0のデータを除外する
+              if (!lotCount || parseInt(lotCount.trim()) <= 0) return;
+
+              const formattedAmount = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(lotCount * 10000);
+              const tr = document.createElement('tr');
+
+              tr.innerHTML = `
+            <td>${email}</td>
+            <td>${lotCount}</td>
+            <td>${formattedAmount}</td>
+          `;
+
+              tbody.appendChild(tr);
+
+              participants.push({
+                customerNumber: customerNumber.trim(),
+                email: email.trim(),
+                lotCount: parseInt(lotCount.trim()),
+                amount: parseInt(lotCount.trim()) * 10000 // 口数 × 10,000
+              });
+            }
+          });
+
+          // Store participants in localStorage for later use
+          localStorage.setItem('participants', JSON.stringify(participants));
+        };
+
+        reader.readAsText(file);
+      });
+
+
+    document.querySelector('.pChild__gara--main--btn a').addEventListener('click', function (event) {
+        event.preventDefault();
+
+        // ローカルストレージをリセット
+        localStorage.removeItem('lotteryResults');
+
+        const participants = JSON.parse(localStorage.getItem('participants')) || [];
+        const totalDrawAmount = 1282500000; // 抽選予定金額
+        let remainingLotCount = totalDrawAmount / 10000; // 口数ベースに変換
+        let totalApplicationLotCount = participants.reduce((sum, participant) => sum + participant.lotCount, 0); // 応募総口数
+        let winners = [];
+        let totalLotCount = 0; // 合計口数
+        let totalAmount = 0; // 合計金額
+
+        // シャッフル関数
+        function shuffle(array) {
+          for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+          }
+        }
+
+        // **参加者リストをランダムにシャッフル**
+        shuffle(participants);
+
+        if (totalApplicationLotCount <= remainingLotCount) {
+          participants.forEach(participant => {
+            const winLotCount = participant.lotCount;
+            const winAmount = winLotCount * 10000;
+
+            winners.push({
+              customerNumber: participant.customerNumber,
+              email: participant.email,
+              lotCount: winLotCount,
+              amount: winAmount,
+              isPartialWin: false
+            });
+
+            totalAmount += winAmount;
+            totalLotCount += winLotCount;
+          });
+        } else {
+          participants.forEach((participant, index) => {
+            if (remainingLotCount <= 0) return;
+
+            let winLotCount = Math.min(participant.lotCount, remainingLotCount);
+
+            if (index === participants.length - 1 && remainingLotCount > 0) {
+              winLotCount = Math.min(remainingLotCount, participant.lotCount);
+            }
+
+            remainingLotCount -= winLotCount;
+
+            // **ここが変更された部分**
+            if (winLotCount <= 0) return; // 当選口数が0の人は追加しない
+
+            const winAmount = winLotCount * 10000;
+
+            winners.push({
+              customerNumber: participant.customerNumber,
+              email: participant.email,
+              lotCount: winLotCount,
+              amount: winAmount,
+              isPartialWin: winLotCount < participant.lotCount
+            });
+
+            totalAmount += winAmount;
+            totalLotCount += winLotCount;
+          });
+        }
+
+        console.log('デバッグ情報');
+        console.log('合計金額:', new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(totalAmount));
+        console.log('合計口数:', totalLotCount);
+        console.log('当選者:', winners);
+
+        localStorage.setItem('lotteryResults', JSON.stringify(winners));
+
+        window.location.href = './gara1.html';
+      });
+  </script>
+  <!-- <script src="./js/script.js"></script> -->
 </body>
 
 </html>
