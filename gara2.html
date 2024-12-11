@@ -57,7 +57,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <!-- <tr>
                   <td>examplexxxxx@xxxxx.com</td>
                   <td>10</td>
                   <td>¥500,000</td>
@@ -156,7 +156,7 @@
                   <td>examplexxxxx@xxxxx.com</td>
                   <td>10</td>
                   <td>¥500,000</td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
           </div>
@@ -170,62 +170,79 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+        // 当選者データを取得
         const winners = JSON.parse(localStorage.getItem('lotteryResults')) || [];
+        // 全参加者データを取得
+        const allParticipants = JSON.parse(localStorage.getItem('participants')) || [];
+
         const tbody = document.querySelector('.reward__main--list tbody');
-        const downloadTrigger = document.querySelector('.left figure img'); // クリックトリガー要素
+        const downloadTrigger = document.querySelector('.left figure img');
 
         tbody.innerHTML = '';
 
         let totalAmount = 0;
         let totalLotCount = 0;
 
+        // CSVデータの準備
         const csvData = [];
-        csvData.push(['お客様番号', 'メールアドレス', '口数', '金額', '部分当選']); // CSVヘッダー
+        csvData.push(['お客様番号', 'メールアドレス', '口数', '金額', '部分当選']);
 
+        // 画面表示用の当選者データ処理
         winners.forEach(winner => {
           const tr = document.createElement('tr');
           const formattedAmount = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(winner.amount);
-          const isPartialWin = winner.isPartialWin ? '⚪︎' : '';
 
           tr.innerHTML = `
-        <td>${winner.email}</td>
-        <td>${winner.lotCount}</td> 
-        <td>${formattedAmount}</td>
-      `;
+            <td>${winner.email}</td>
+            <td>${winner.lotCount}</td>
+            <td>${formattedAmount}</td>
+        `;
 
           tbody.appendChild(tr);
-
-          // CSVデータに追加
-          csvData.push([winner.customerNumber || '—', winner.email, winner.lotCount, winner.amount, isPartialWin]);
-
           totalAmount += winner.amount;
           totalLotCount += winner.lotCount;
+        });
+
+        // CSV用のデータ作成（全参加者を含む）
+        allParticipants.forEach(participant => {
+          // 当選者データから該当する参加者の情報を探す
+          const winnerData = winners.find(w => w.customerNumber === participant.customerNumber);
+
+          // CSV行データの作成
+          const csvRow = [
+            participant.customerNumber || '—',
+            participant.email,
+            winnerData ? winnerData.lotCount : 0, // 当選していない場合は0
+            winnerData ? winnerData.amount : 0,   // 当選していない場合は0
+            winnerData?.isPartialWin ? '⚪︎' : '' // 部分当選マーク
+          ];
+
+          csvData.push(csvRow);
         });
 
         // デバッグ情報の出力
         console.log('合計金額:', new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(totalAmount));
         console.log('合計口数:', totalLotCount);
 
+        // ダウンロード処理
         downloadTrigger.addEventListener('click', function () {
           const csvContent = csvData.map(row => row.join(',')).join('\n');
           const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
           const url = URL.createObjectURL(blob);
 
-          // 現在の日時を取得して、ファイル名に含める
+          // 現在の日時を取得してファイル名に含める
           const now = new Date();
           const formattedDate = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
           const fileName = `winners_${formattedDate}.csv`;
 
           const downloadLink = document.createElement('a');
           downloadLink.href = url;
-          downloadLink.setAttribute('download', fileName); // 日時付きのファイル名
-          downloadLink.style.display = 'none';  // リンクを非表示に
+          downloadLink.setAttribute('download', fileName);
+          downloadLink.style.display = 'none';
           document.body.appendChild(downloadLink);
 
-          // 自動でダウンロードを開始
           downloadLink.click();
 
-          // クリーンアップ
           setTimeout(() => {
             document.body.removeChild(downloadLink);
             URL.revokeObjectURL(url);
