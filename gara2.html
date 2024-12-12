@@ -175,6 +175,11 @@
         // 全参加者データを取得
         const allParticipants = JSON.parse(localStorage.getItem('participants')) || [];
 
+        // 重複を除去：customer_numberをキーとして使用
+        const uniqueParticipants = Array.from(
+          new Map(allParticipants.map(item => [item.customerNumber, item])).values()
+        );
+
         const tbody = document.querySelector('.reward__main--list tbody');
         const downloadTrigger = document.querySelector('.left figure img');
 
@@ -185,7 +190,7 @@
 
         // CSVデータの準備
         const csvData = [];
-        csvData.push(['お客様番号', 'メールアドレス', '口数', '金額', '部分当選']);
+        csvData.push(['お客様番号', 'メールアドレス', '応募口数', '当選金額', '当選口数', '部分当選']);
 
         // 画面表示用の当選者データ処理
         winners.forEach(winner => {
@@ -203,8 +208,8 @@
           totalLotCount += winner.lotCount;
         });
 
-        // CSV用のデータ作成（全参加者を含む）
-        allParticipants.forEach(participant => {
+        // CSV用のデータ作成（重複を除去した参加者リストを使用）
+        uniqueParticipants.forEach(participant => {
           // 当選者データから該当する参加者の情報を探す
           const winnerData = winners.find(w => w.customerNumber === participant.customerNumber);
 
@@ -212,9 +217,10 @@
           const csvRow = [
             participant.customerNumber || '—',
             participant.email,
-            winnerData ? winnerData.lotCount : 0, // 当選していない場合は0
-            winnerData ? winnerData.amount : 0,   // 当選していない場合は0
-            winnerData?.isPartialWin ? '⚪︎' : '' // 部分当選マーク
+            participant.lotCount,
+            winnerData ? winnerData.amount : 0,    // 当選金額
+            winnerData ? winnerData.lotCount : 0,  // 当選口数
+            winnerData?.isPartialWin ? 1 : ''  // 部分当選
           ];
 
           csvData.push(csvRow);

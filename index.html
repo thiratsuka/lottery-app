@@ -178,7 +178,6 @@
 
   <script>
     document.getElementById('file').addEventListener('change', function (event) {
-        // ローカルストレージをリセット
         localStorage.removeItem('participants');
         localStorage.removeItem('lotteryResults');
 
@@ -187,74 +186,91 @@
 
         reader.onload = function (e) {
           const csvData = e.target.result;
-          const rows = csvData.split('\n').slice(1); // Remove header row
+          const rows = csvData.split('\n').slice(1); // ヘッダー行を除外
           const tbody = document.querySelector('#result tbody');
-          tbody.innerHTML = ''; // Clear existing rows
+          tbody.innerHTML = '';
 
-          let participants = [];
+          // 一時的な参加者マップ（キー：お客様番号）
+          const participantMap = new Map();
 
           rows.forEach(row => {
             if (row.trim()) {
               const [customerNumber, lotCount, amount, email] = row.split(',');
 
-              // 口数が0のデータを除外する
               if (!lotCount || parseInt(lotCount.trim()) <= 0) return;
 
-              const formattedAmount = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(lotCount * 10000);
-              const tr = document.createElement('tr');
-
-              tr.innerHTML = `
-            <td>${email}</td>
-            <td>${lotCount}</td>
-            <td>${formattedAmount}</td>
-          `;
-
-              tbody.appendChild(tr);
-
-              participants.push({
-                customerNumber: customerNumber.trim(),
-                email: email.trim(),
-                lotCount: parseInt(lotCount.trim()),
-                amount: parseInt(lotCount.trim()) * 10000 // 口数 × 10,000
-              });
+              // お客様番号をキーとして使用し、既存のデータがあれば合算
+              if (participantMap.has(customerNumber.trim())) {
+                const existing = participantMap.get(customerNumber.trim());
+                existing.lotCount += parseInt(lotCount.trim());
+                existing.amount += parseInt(lotCount.trim()) * 10000;
+              } else {
+                participantMap.set(customerNumber.trim(), {
+                  customerNumber: customerNumber.trim(),
+                  email: email.trim(),
+                  lotCount: parseInt(lotCount.trim()),
+                  amount: parseInt(lotCount.trim()) * 10000
+                });
+              }
             }
           });
 
-          // Store participants in localStorage for later use
+          // マップから配列に変換
+          const participants = Array.from(participantMap.values());
+
+          // テーブル表示を更新
+          participants.forEach(participant => {
+            const formattedAmount = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(participant.amount);
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${participant.email}</td>
+                <td>${participant.lotCount}</td>
+                <td>${formattedAmount}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+
+          console.log('読み込んだ参加者数:', participants.length);
+          console.log('読み込んだ総口数:', participants.reduce((sum, p) => sum + p.lotCount, 0));
+
           localStorage.setItem('participants', JSON.stringify(participants));
         };
 
         reader.readAsText(file);
       });
 
-
-    document.querySelector('.pChild__gara--main--btn a').addEventListener('click', function (event) {
+      document.querySelector('.pChild__gara--main--btn a').addEventListener('click', function (event) {
         event.preventDefault();
 
-        // ローカルストレージをリセット
         localStorage.removeItem('lotteryResults');
 
         const participants = JSON.parse(localStorage.getItem('participants')) || [];
         const totalDrawAmount = 1282500000; // 抽選予定金額
-        let remainingLotCount = totalDrawAmount / 10000; // 口数ベースに変換
-        let totalApplicationLotCount = participants.reduce((sum, participant) => sum + participant.lotCount, 0); // 応募総口数
-        let winners = [];
-        let totalLotCount = 0; // 合計口数
-        let totalAmount = 0; // 合計金額
+        const targetLotCount = Math.floor(totalDrawAmount / 10000); // 128,250口
+        let remainingLotCount = targetLotCount;
+        let totalApplicationLotCount = participants.reduce((sum, participant) => sum + participant.lotCount, 0);
 
-        // シャッフル関数
+        console.log('=== 抽選開始 ===');
+        console.log('予定総口数:', targetLotCount);
+        console.log('応募総口数:', totalApplicationLotCount);
+
+        let winners = [];
+        let totalLotCount = 0;
+        let totalAmount = 0;
+
         function shuffle(array) {
-          for (let i = array.length - 1; i > 0; i--) {
+          const newArray = [...array];
+          for (let i = newArray.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [array[i], array[j]] = [array[j], array[i]];
+            [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
           }
+          return newArray;
         }
 
-        // **参加者リストをランダムにシャッフル**
-        shuffle(participants);
+        const shuffledParticipants = shuffle(participants);
 
-        if (totalApplicationLotCount <= remainingLotCount) {
-          participants.forEach(participant => {
+        if (totalApplicationLotCount <= targetLotCount) {
+          shuffledParticipants.forEach((participant, index) => {
             const winLotCount = participant.lotCount;
             const winAmount = winLotCount * 10000;
 
@@ -270,22 +286,19 @@
             totalLotCount += winLotCount;
           });
         } else {
-          participants.forEach((participant, index) => {
+          shuffledParticipants.forEach((participant, index) => {
             if (remainingLotCount <= 0) return;
 
-            let winLotCount = Math.min(participant.lotCount, remainingLotCount);
-
-            if (index === participants.length - 1 && remainingLotCount > 0) {
-              winLotCount = Math.min(remainingLotCount, participant.lotCount);
+            let winLotCount;
+            if (index === shuffledParticipants.length - 1 && remainingLotCount > 0) {
+              winLotCount = Math.min(participant.lotCount, remainingLotCount);
+            } else {
+              winLotCount = Math.min(participant.lotCount, remainingLotCount);
             }
 
-            remainingLotCount -= winLotCount;
-
-            // **ここが変更された部分**
-            if (winLotCount <= 0) return; // 当選口数が0の人は追加しない
+            if (winLotCount <= 0) return;
 
             const winAmount = winLotCount * 10000;
-
             winners.push({
               customerNumber: participant.customerNumber,
               email: participant.email,
@@ -294,17 +307,26 @@
               isPartialWin: winLotCount < participant.lotCount
             });
 
+            remainingLotCount -= winLotCount;
             totalAmount += winAmount;
             totalLotCount += winLotCount;
           });
         }
 
-        localStorage.setItem('lotteryResults', JSON.stringify(winners));
+        console.log('=== 抽選結果 ===');
+        console.log('予定金額:', new Intl.NumberFormat('ja-JP').format(totalDrawAmount));
+        console.log('実際の合計金額:', new Intl.NumberFormat('ja-JP').format(totalAmount));
+        console.log('差額:', new Intl.NumberFormat('ja-JP').format(totalDrawAmount - totalAmount));
+        console.log('予定口数:', targetLotCount);
+        console.log('実際の総当選口数:', totalLotCount);
+        console.log('未使用口数:', targetLotCount - totalLotCount);
+        console.log('当選者数:', winners.length);
 
+        localStorage.setItem('lotteryResults', JSON.stringify(winners));
         window.location.href = './gara1.html';
       });
 
-      console.log('2024/12/11 v2');
+      console.log('2024/12/12 v4');
   </script>
   <!-- <script src="./js/script.js"></script> -->
 </body>
