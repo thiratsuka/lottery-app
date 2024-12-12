@@ -190,7 +190,7 @@
 
         // CSVデータの準備
         const csvData = [];
-        csvData.push(['お客様番号', 'メールアドレス', '応募口数', '当選金額', '当選口数', '部分当選']);
+        csvData.push(['お客様番号', 'メールアドレス', '応募口数', '応募金額', '当選口数', '部分当選']);
 
         // 画面表示用の当選者データ処理
         winners.forEach(winner => {
@@ -218,9 +218,9 @@
             participant.customerNumber || '—',
             participant.email,
             participant.lotCount,
-            winnerData ? winnerData.amount : 0,    // 当選金額
+            participant.amount,         // 応募金額
             winnerData ? winnerData.lotCount : 0,  // 当選口数
-            winnerData?.isPartialWin ? 1 : ''  // 部分当選
+            winnerData?.isPartialWin ? '⚪︎' : ''  // 部分当選
           ];
 
           csvData.push(csvRow);
