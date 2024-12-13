@@ -70,101 +70,115 @@
 
   <script>
     try {
-      // 当選者データを取得
-      const winners = JSON.parse(localStorage.getItem('lotteryResults')) || [];
-      // 全参加者データを取得
-      const allParticipants = JSON.parse(localStorage.getItem('participants')) || [];
-
-      // 重複を除去：customer_numberをキーとして使用
-      const uniqueParticipants = Array.from(
-        new Map(allParticipants.map(item => [item.customerNumber, item])).values()
-      );
-
-      // 要素の取得
-      const tbody = document.querySelector('.reward__main--list tbody');
-      const winnerCountElement = document.getElementById('winnerCount');
-      const downloadButton = document.getElementById('downloadButton');
-
-      // エラーハンドリング：要素の存在チェック
-      if (!tbody || !winnerCountElement || !downloadButton) {
-        console.error('Required elements not found');
-        throw new Error('Required elements not found');
-      }
-
-      // 当選者数を表示
-      winnerCountElement.textContent = winners.length;
-
-      tbody.innerHTML = '';
-
-      let totalAmount = 0;
-      let totalLotCount = 0;
-
-      // CSVデータの準備
-      const csvData = [];
-      csvData.push(['お客様番号', 'メールアドレス', '応募口数', '応募金額', '当選口数', '部分当選']);
-
-      // 画面表示用の当選者データ処理
-      winners.forEach(winner => {
-        const tr = document.createElement('tr');
-        const formattedAmount = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(winner.amount);
-
-        tr.innerHTML = `
-          <td>${winner.email}</td>
-          <td>${winner.lotCount}</td>
-          <td>${formattedAmount}</td>
-        `;
-
-        tbody.appendChild(tr);
-        totalAmount += winner.amount;
-        totalLotCount += winner.lotCount;
-      });
-
-      // CSV用のデータ作成
-      uniqueParticipants.forEach(participant => {
-        const winnerData = winners.find(w => w.customerNumber === participant.customerNumber);
-
-        const csvRow = [
-          participant.customerNumber || '—',
-          participant.email,
-          participant.lotCount,
-          participant.amount,
-          winnerData ? winnerData.lotCount : 0,
-          winnerData?.isPartialWin ? '⚪︎' : ''
-        ];
-
-        csvData.push(csvRow);
-      });
-
-      // ダウンロードボタンのイベントリスナー
-      downloadButton.addEventListener('click', function () {
-        try {
-          const csvContent = csvData.map(row => row.join(',')).join('\n');
-          const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-          const url = URL.createObjectURL(blob);
-
-          const now = new Date();
-          const formattedDate = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
-          const fileName = `winners_${formattedDate}.csv`;
-
-          const downloadLink = document.createElement('a');
-          downloadLink.href = url;
-          downloadLink.setAttribute('download', fileName);
-          downloadLink.style.display = 'none';
-          document.body.appendChild(downloadLink);
-
-          downloadLink.click();
-
-          setTimeout(() => {
-            document.body.removeChild(downloadLink);
-            URL.revokeObjectURL(url);
-          }, 100);
-        } catch (error) {
-          console.error('Download failed:', error);
+        // セッションストレージから当選者数を取得して表示（即時）
+        const winnerCount = sessionStorage.getItem('winnerCount') || '0';
+        const winnerCountElement = document.getElementById('winnerCount');
+        if (winnerCountElement) {
+          winnerCountElement.textContent = winnerCount;
         }
-      });
-    } catch (error) {
-      console.error('Initialization failed:', error);
-    }
+
+        // 残りの処理は非同期で実行
+        setTimeout(() => {
+          // 当選者データを取得
+          const winners = JSON.parse(localStorage.getItem('lotteryResults')) || [];
+          // 全参加者データを取得
+          const allParticipants = JSON.parse(localStorage.getItem('participants')) || [];
+
+          // 重複を除去：customer_numberをキーとして使用
+          const uniqueParticipants = Array.from(
+            new Map(allParticipants.map(item => [item.customerNumber, item])).values()
+          );
+
+          // 要素の取得
+          const tbody = document.querySelector('.reward__main--list tbody');
+          const downloadButton = document.getElementById('downloadButton');
+
+          // エラーハンドリング：要素の存在チェック
+          if (!tbody || !downloadButton) {
+            console.error('Required elements not found');
+            throw new Error('Required elements not found');
+          }
+
+          tbody.innerHTML = '';
+
+          let totalAmount = 0;
+          let totalLotCount = 0;
+
+          // CSVデータの準備
+          const csvData = [];
+          csvData.push(['お客様番号', 'メールアドレス', '応募口数', '応募金額', '当選口数', '部分当選']);
+
+          // 画面表示用の当選者データ処理
+          winners.forEach(winner => {
+            const tr = document.createElement('tr');
+            const formattedAmount = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(winner.amount);
+
+            tr.innerHTML = `
+        <td>${winner.email}</td>
+        <td>${winner.lotCount}</td>
+        <td>${formattedAmount}</td>
+      `;
+
+            tbody.appendChild(tr);
+            totalAmount += winner.amount;
+            totalLotCount += winner.lotCount;
+          });
+
+          // CSV用のデータ作成
+          uniqueParticipants.forEach(participant => {
+            const winnerData = winners.find(w => w.customerNumber === participant.customerNumber);
+
+            const csvRow = [
+              participant.customerNumber || '—',
+              participant.email,
+              participant.lotCount,
+              participant.amount,
+              winnerData ? winnerData.lotCount : 0,
+              winnerData?.isPartialWin ? '⚪︎' : ''
+            ];
+
+            csvData.push(csvRow);
+          });
+
+          // ダウンロードボタンのイベントリスナー
+          downloadButton.addEventListener('click', function () {
+            try {
+              const csvContent = csvData.map(row => row.join(',')).join('\n');
+              const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+              const url = URL.createObjectURL(blob);
+
+              const now = new Date();
+              const formattedDate = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
+              const fileName = `winners_${formattedDate}.csv`;
+
+              const downloadLink = document.createElement('a');
+              downloadLink.href = url;
+              downloadLink.setAttribute('download', fileName);
+              downloadLink.style.display = 'none';
+              document.body.appendChild(downloadLink);
+
+              downloadLink.click();
+
+              setTimeout(() => {
+                document.body.removeChild(downloadLink);
+                URL.revokeObjectURL(url);
+              }, 100);
+            } catch (error) {
+              console.error('Download failed:', error);
+            }
+          });
+
+          // デバッグ情報をコンソールに出力
+          console.log('=== 結果表示 ===');
+          console.log('当選者数:', winners.length);
+          console.log('合計金額:', new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(totalAmount));
+          console.log('合計口数:', totalLotCount);
+
+        }, 0);  // 次のイベントループで実行
+
+      } catch (error) {
+        console.error('Initialization failed:', error);
+      }
   </script>
 </body>
 

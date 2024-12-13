@@ -65,106 +65,6 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -324,11 +224,17 @@
         console.log('未使用口数:', targetLotCount - totalLotCount);
         console.log('当選者数:', winners.length);
 
+        // 当選者数をセッションストレージに保存
+        sessionStorage.setItem('winnerCount', winners.length.toString());
+
+        // 抽選結果をローカルストレージに保存
         localStorage.setItem('lotteryResults', JSON.stringify(winners));
+
+        // 次のページに遷移
         window.location.href = './gara1.html';
       });
 
-      console.log('2024/12/13 v1');
+      console.log('2024/12/13 v2');
   </script>
   <!-- <script src="./js/script.js"></script> -->
 </body>
