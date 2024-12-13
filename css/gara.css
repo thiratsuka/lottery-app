@@ -1,7 +1,6 @@
 @media screen and (min-width: 769px) {
   .pChild__gara {
     padding: 40px 0 160px;
-    background: #F7F7F0 url("../img/garaTown.png") bottom left repeat-x;
   }
   .pChild__gara--main {
     max-width: 800px;
@@ -10,7 +9,8 @@
     background: #fff;
     -moz-border-radius: 12px;
          border-radius: 12px;
-    padding: 20px 160px 74px;
+    padding: 0 160px 74px;
+    overflow: hidden;
   }
   .pChild__gara--main--logo {
     line-height: 0;
@@ -26,10 +26,8 @@
     height: auto;
   }
   .pChild__gara--main--thumb {
-    margin-top: 20px;
-    -moz-border-radius: 8px;
-         border-radius: 8px;
     overflow: hidden;
+    margin: 0 -160px 0;
   }
   .pChild__gara--main--thumb img {
     width: 100%;
@@ -201,10 +199,11 @@
     position: absolute;
     content: "";
     width: 100%;
-    height: 549px;
-    background: url("../img/garaBg.png") top center no-repeat;
-    -moz-background-size: contain;
-         background-size: contain;
+    height: 0;
+    padding-top: 30%;
+    background: url("../img/garaBg.jpg") top center no-repeat;
+    -moz-background-size: 100% auto;
+         background-size: 100% auto;
     z-index: -1;
     top: 0;
     left: 0;
@@ -212,7 +211,7 @@
   .pChild__gara.reward .reward__main {
     max-width: 800px;
     width: 100%;
-    margin: auto;
+    margin: 0 auto 4rem;
   }
   .pChild__gara.reward .reward__main--top {
     display: -webkit-box;
@@ -227,6 +226,7 @@
        -moz-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
+    margin-bottom:24px;
   }
   .pChild__gara.reward .reward__main--top .left {
     width: 329px;
@@ -234,8 +234,21 @@
   .pChild__gara.reward .reward__main--top .right {
     width: 439px;
   }
+  .pChild__gara.reward .reward__main--total {
+    text-align: center;
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 700;
+    font-family: 'Inter',sans-serif;
+    margin-top: 10px;
+    text-align: center;
+    color:#194353;
+  }
+  .pChild__gara.reward .reward__main--total span {
+    color: #0C8816;
+  }
   .pChild__gara.reward .reward__main--list {
-    margin-top: 24px;
+    margin-top: 20px;
     -moz-border-radius: 12px;
          border-radius: 12px;
     border: 4px solid #194353;
@@ -281,6 +294,33 @@
   .pChild__gara.reward .reward__main--list table tbody tr td:nth-of-type(3) {
     padding: 10px 20px;
   }
+  .pChild__gara.reward .reward__main--btn {
+    margin-top: 28px;
+    text-align: center;
+  }
+  .pChild__gara.reward .reward__main--btn a {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 300px;
+    height: 58px;
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: 700;
+    background: #F08428;
+    -moz-border-radius: 8px;
+         border-radius: 8px;
+    color: #fff;
+  }
   .pChild__gara--video {
     line-height: 0;
     display: -webkit-box;
@@ -310,14 +350,39 @@
     left: 0;
     z-index: -1;
   }
+  .pChild__full {
+    height: 100%;
+  }
+  .pChild__full .container {
+    height: 100%;
+    overflow: auto;
+  }
+  .pChild__full .container main.pChild__gara--bgBot {
+    min-height: 100%;
+  }
+  .pChild__gara--bgBot {
+    background: #F7F7F0 url("../img/garaTown.png") bottom left repeat-x;
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .pChild__gara {
-    padding: 10.25641vw 0 46.15385vw;
+  .pChild__full {
+    height: 100%;
+  }
+  .pChild__full .container {
+    height: 100%;
+    overflow: auto;
+  }
+  .pChild__full .container main.pChild__gara--bgBot {
+    min-height: 100%;
+  }
+  .pChild__gara--bgBot {
     background: #F7F7F0 url("../img/garaTown.png") bottom left repeat-x;
     -moz-background-size: auto 15.64103vw;
          background-size: auto 15.64103vw;
+  }
+  .pChild__gara {
+    padding: 10.25641vw 0 46.15385vw;
   }
   .pChild__gara--main {
     width: 92.30769vw;
@@ -325,7 +390,8 @@
     background: #fff;
     -moz-border-radius: 3.07692vw;
          border-radius: 3.07692vw;
-    padding: 5.12821vw 3.84615vw;
+    padding: 0vw 3.84615vw 5.12821vw;
+    overflow: hidden;
   }
   .pChild__gara--main--logo {
     line-height: 0;
@@ -342,8 +408,7 @@
   }
   .pChild__gara--main--thumb {
     margin-top: 5.12821vw;
-    -moz-border-radius: 2.05128vw;
-         border-radius: 2.05128vw;
+    margin: 0 -3.84615vw;
     overflow: hidden;
   }
   .pChild__gara--main--thumb img {
@@ -516,8 +581,8 @@
     position: absolute;
     content: "";
     width: 100%;
-    height: 70.38462vw;
-    background: url("../img/garaBg.png") top center no-repeat;
+    height: 90.38462vw;
+    background: url("../img/garaBg.jpg") top center no-repeat;
     -moz-background-size: contain;
          background-size: contain;
     z-index: -1;
@@ -548,8 +613,20 @@
   .pChild__gara.reward .reward__main--top .right {
     width: 58%;
   }
+  .pChild__gara.reward .reward__main--total {
+    text-align: center;
+    font-size: 9.23077vw;
+    line-height: 1.5;
+    font-weight: 700;
+    font-family: 'Inter',sans-serif;
+    margin-top: 5.12821vw;
+    text-align: center;
+  }
+  .pChild__gara.reward .reward__main--total span {
+    color: #0C8816;
+  }
   .pChild__gara.reward .reward__main--list {
-    margin-top: 6.15385vw;
+    margin-top: 5.12821vw;
     -moz-border-radius: 3.07692vw;
          border-radius: 3.07692vw;
     border: 4px solid #194353;
@@ -591,6 +668,33 @@
   }
   .pChild__gara.reward .reward__main--list table tbody tr td:nth-of-type(1) {
     text-align: left;
+  }
+  .pChild__gara.reward .reward__main--btn {
+    margin-top: 7.17949vw;
+    text-align: center;
+  }
+  .pChild__gara.reward .reward__main--btn a {
+    display: -webkit-inline-box;
+    display: -moz-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-pack: center;
+       -moz-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+       -moz-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 76.92308vw;
+    height: 14.87179vw;
+    font-size: 5.12821vw;
+    line-height: 1.5;
+    font-weight: 700;
+    background: #F08428;
+    -moz-border-radius: 2.05128vw;
+         border-radius: 2.05128vw;
+    color: #fff;
   }
   .pChild__gara--video {
     line-height: 0;

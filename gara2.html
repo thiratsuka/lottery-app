@@ -21,7 +21,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/common.css">
@@ -32,21 +34,17 @@
   <link rel="stylesheet" href="./css/gara.css">
 </head>
 
-<body class="pChild">
+<body class="pChild pChild__full">
   <div id="container" class="container">
-    <main>
+    <main class="pChild__gara--bgBot">
       <div class="pChild__gara reward">
         <div class="reward__main">
           <div class="reward__main--top">
-            <div class="left">
-              <figure><img src="./img/garaImg2.png" alt=""></figure>
-            </div>
-            <div class="right">
-              <figure>
-                <img src="./img/garaImg.png" alt="">
-              </figure>
-            </div>
+            <figure><img src="./img/garaImg3.png" alt=""></figure>
           </div>
+          <hr style="border-color:#194353">
+          <div class="reward__main--total">当選者数：<span id="winnerCount">0</span>人</div>
+          <hr style="border-color:#194353">
           <div class="reward__main--list">
             <table>
               <thead>
@@ -57,108 +55,11 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr>
-                <tr>
-                  <td>examplexxxxx@xxxxx.com</td>
-                  <td>10</td>
-                  <td>¥500,000</td>
-                </tr> -->
               </tbody>
             </table>
+          </div>
+          <div class="reward__main--btn">
+            <a href="javascript:void(0)" id="downloadButton">ダウンロード</a>
           </div>
         </div>
       </div>
@@ -166,77 +67,81 @@
   </div>
   <script src="./js/libs.js"></script>
   <script src="./js/gara.js"></script>
-  <!-- <script src="./js/script.js"></script> -->
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // 当選者データを取得
-        const winners = JSON.parse(localStorage.getItem('lotteryResults')) || [];
-        // 全参加者データを取得
-        const allParticipants = JSON.parse(localStorage.getItem('participants')) || [];
+    try {
+      // 当選者データを取得
+      const winners = JSON.parse(localStorage.getItem('lotteryResults')) || [];
+      // 全参加者データを取得
+      const allParticipants = JSON.parse(localStorage.getItem('participants')) || [];
 
-        // 重複を除去：customer_numberをキーとして使用
-        const uniqueParticipants = Array.from(
-          new Map(allParticipants.map(item => [item.customerNumber, item])).values()
-        );
+      // 重複を除去：customer_numberをキーとして使用
+      const uniqueParticipants = Array.from(
+        new Map(allParticipants.map(item => [item.customerNumber, item])).values()
+      );
 
-        const tbody = document.querySelector('.reward__main--list tbody');
-        const downloadTrigger = document.querySelector('.left figure img');
+      // 要素の取得
+      const tbody = document.querySelector('.reward__main--list tbody');
+      const winnerCountElement = document.getElementById('winnerCount');
+      const downloadButton = document.getElementById('downloadButton');
 
-        tbody.innerHTML = '';
+      // エラーハンドリング：要素の存在チェック
+      if (!tbody || !winnerCountElement || !downloadButton) {
+        console.error('Required elements not found');
+        throw new Error('Required elements not found');
+      }
 
-        let totalAmount = 0;
-        let totalLotCount = 0;
+      // 当選者数を表示
+      winnerCountElement.textContent = winners.length;
 
-        // CSVデータの準備
-        const csvData = [];
-        csvData.push(['お客様番号', 'メールアドレス', '応募口数', '応募金額', '当選口数', '部分当選']);
+      tbody.innerHTML = '';
 
-        // 画面表示用の当選者データ処理
-        winners.forEach(winner => {
-          const tr = document.createElement('tr');
-          const formattedAmount = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(winner.amount);
+      let totalAmount = 0;
+      let totalLotCount = 0;
 
-          tr.innerHTML = `
-            <td>${winner.email}</td>
-            <td>${winner.lotCount}</td>
-            <td>${formattedAmount}</td>
+      // CSVデータの準備
+      const csvData = [];
+      csvData.push(['お客様番号', 'メールアドレス', '応募口数', '応募金額', '当選口数', '部分当選']);
+
+      // 画面表示用の当選者データ処理
+      winners.forEach(winner => {
+        const tr = document.createElement('tr');
+        const formattedAmount = new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(winner.amount);
+
+        tr.innerHTML = `
+          <td>${winner.email}</td>
+          <td>${winner.lotCount}</td>
+          <td>${formattedAmount}</td>
         `;
 
-          tbody.appendChild(tr);
-          totalAmount += winner.amount;
-          totalLotCount += winner.lotCount;
-        });
+        tbody.appendChild(tr);
+        totalAmount += winner.amount;
+        totalLotCount += winner.lotCount;
+      });
 
-        // CSV用のデータ作成（重複を除去した参加者リストを使用）
-        uniqueParticipants.forEach(participant => {
-          // 当選者データから該当する参加者の情報を探す
-          const winnerData = winners.find(w => w.customerNumber === participant.customerNumber);
+      // CSV用のデータ作成
+      uniqueParticipants.forEach(participant => {
+        const winnerData = winners.find(w => w.customerNumber === participant.customerNumber);
 
-          // CSV行データの作成
-          const csvRow = [
-            participant.customerNumber || '—',
-            participant.email,
-            participant.lotCount,
-            participant.amount,         // 応募金額
-            winnerData ? winnerData.lotCount : 0,  // 当選口数
-            winnerData?.isPartialWin ? '⚪︎' : ''  // 部分当選
-          ];
+        const csvRow = [
+          participant.customerNumber || '—',
+          participant.email,
+          participant.lotCount,
+          participant.amount,
+          winnerData ? winnerData.lotCount : 0,
+          winnerData?.isPartialWin ? '⚪︎' : ''
+        ];
 
-          csvData.push(csvRow);
-        });
+        csvData.push(csvRow);
+      });
 
-        // デバッグ情報の出力
-        console.log('合計金額:', new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(totalAmount));
-        console.log('合計口数:', totalLotCount);
-
-        // ダウンロード処理
-        downloadTrigger.addEventListener('click', function () {
+      // ダウンロードボタンのイベントリスナー
+      downloadButton.addEventListener('click', function () {
+        try {
           const csvContent = csvData.map(row => row.join(',')).join('\n');
           const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
           const url = URL.createObjectURL(blob);
 
-          // 現在の日時を取得してファイル名に含める
           const now = new Date();
           const formattedDate = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, '0')}${String(now.getDate()).padStart(2, '0')}_${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}${String(now.getSeconds()).padStart(2, '0')}`;
           const fileName = `winners_${formattedDate}.csv`;
@@ -253,8 +158,13 @@
             document.body.removeChild(downloadLink);
             URL.revokeObjectURL(url);
           }, 100);
-        });
+        } catch (error) {
+          console.error('Download failed:', error);
+        }
       });
+    } catch (error) {
+      console.error('Initialization failed:', error);
+    }
   </script>
 </body>
 
